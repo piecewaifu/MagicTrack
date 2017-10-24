@@ -1,0 +1,644 @@
+﻿@import "reset.css" all;
+
+@font-face {
+    font-family: FontAwesome;
+    src: url(FontAwesome/fonts/fontawesome.ttf);
+}
+
+@font-face {
+    font-family: MagicFontSemi;
+    src: url(MagicFont/SF-UI-Display-Semibold.ttf);
+}
+
+@font-face {
+    font-family: MagicFontRegular;
+    src: url(MagicFont/SF-UI-Display-Regular.ttf);
+}
+
+@font-face {
+    font-family: MagicFontLight;
+    src: url(MagicFont/SF-UI-Display-Light.ttf);
+}
+
+@font-face {
+    font-family: MagicFontHeavy;
+    src: url(MagicFont/SF-UI-Display-Heavy.ttf);
+}
+
+@font-face {
+    font-family: MagicFontBold;
+    src: url(MagicFont/SF-UI-Display-Bold.ttf);
+}
+
+@font-face {
+    font-family: MagicFontBlack;
+    src: url(MagicFont/SF-UI-Display-Black.ttf);
+}
+
+#message {
+    position: fixed;
+    width: 300px;
+    height: 100px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    left: 20px;
+    top: 20px;
+    border-radius: 5px;
+    font-family: MagicFontRegular;
+    font-size: 16px;
+    border: 2px solid rgb(60, 221, 29);
+    z-index: 1000000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease all .5s;
+}
+
+header {
+    width: 100%;
+    height: 580px;
+    background: url(img/bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+    header div {
+        height: 80px;
+        background: white;
+        padding: 0 65px 0 65px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: -2;
+    }
+
+        header div h1 {
+            font-size: 24px;
+            font-family: MagicFontSemi;
+        }
+
+        header div p {
+            font-size: 30px;
+            font-family: MagicFontLight;
+        }
+
+        header div button {
+        }
+
+            header div button:before {
+            }
+
+.magic-track {
+    height: 319px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*padding: 0 139px 0 139px;*/
+}
+
+    .magic-track .describe {
+        width: 533px;
+        height: 249px;
+    }
+
+        .magic-track .describe h1 {
+            font-family: MagicFontBold;
+            font-size: 24px;
+        }
+
+        .magic-track .describe p {
+            font-family: MagicFontRegular;
+            font-size: 15px;
+            margin: 15px 0 15px 0;
+            line-height: 20px;
+        }
+
+        .magic-track .describe a {
+            font-family: MagicFontBold;
+            font-size: 16px;
+            text-decoration: none;
+            color: rgb(60, 221, 29);
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .magic-track .describe img {
+            position: absolute;
+            right: -40px;
+        }
+
+.track-features {
+    width: 100%;
+    height: 548px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 5px 2px rgba(194,194,194,1);
+}
+
+    .track-features h1 {
+        font-family: MagicFontRegular;
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .track-features .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1088px;
+    }
+
+        .track-features .container .features {
+            width: 470px;
+            /*list-style-image: url('img/bullet.png');*/
+            padding-left: 60px;
+        }
+
+            .track-features .container .features li {
+                margin-bottom: 45px;
+                width: 420px;
+                position: relative;
+            }
+
+                .track-features .container .features li:before {
+                    content: "";
+                    background-image: url('img/bullet.png');
+                    background-repeat: no-repeat;
+                    display: block;
+                    height: 24px;
+                    width: 24px;
+                    position: absolute;
+                    left: -48px;
+                    top: -2px;
+                }
+
+            .track-features .container .features h1 {
+                font-family: MagicFontBold;
+                font-size: 20px;
+                text-align: left;
+                margin-bottom: 0;
+            }
+
+            .track-features .container .features p {
+                font-family: MagicFontRegular;
+                font-size: 15px;
+                text-align: left;
+            }
+
+.choose-track {
+    width: 100%;
+    height: 1875px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+    .choose-track h1 {
+        font-family: MagicFontSemi;
+        font-size: 50px;
+        text-transform: uppercase;
+        margin-top: 35px;
+    }
+
+    .choose-track p {
+        font-family: MagicFontRegular;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .choose-track h1 span {
+        color: rgb(60, 221, 29);
+    }
+
+    .choose-track .items {
+        display: flex;
+        margin-top: 60px;
+    }
+
+        .choose-track .items .item {
+            width: 290px;
+            height: 617px;
+            border: 1px solid rgb(148, 148, 148);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            margin-right: 23px;
+        }
+
+            .choose-track .items .item:last-child {
+                margin: 0;
+            }
+
+            .choose-track .items .item .price {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                height: 66px;
+                background: rgb(245,245,245);
+            }
+
+                .choose-track .items .item .price h1 {
+                    font-family: MagicFontBold;
+                    font-size: 30px;
+                    margin: 0;
+                }
+
+                    .choose-track .items .item .price h1 span {
+                        color: black;
+                        font-size: 15px;
+                    }
+
+.discount-mark:before {
+    content: "-40%";
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: MagicFontRegular;
+    font-size: 24px;
+    color: white;
+    top: -24px;
+    right: -16px;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    background: rgb(60, 221, 29);
+    border: none;
+    border-radius: 2px;
+    font-size: 16px;
+    color: white;
+    font-family: MagicFontHeavy;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    button:before {
+        content: "";
+        width: 80px;
+        height: 1px;
+        border-radius: 50%;
+        position: absolute;
+        background: black;
+        box-shadow: 45px 10px 13px 6px black;
+        z-index: -1;
+        transform: rotate(5deg);
+    }
+
+.item button img {
+    margin-right: 10px;
+}
+
+.pieces li {
+    display: flex;
+    margin-top: 20px;
+}
+
+    .pieces li:first-child {
+        margin: 0;
+    }
+
+    .pieces li span {
+        font-family: MagicFontBlack;
+        font-size: 15px;
+    }
+
+    .pieces li p {
+        margin: 0;
+        font-size: 15px;
+        font-family: MagicFontRegular;
+    }
+
+.discount p {
+    margin: 0;
+    font-family: MagicFontRegular;
+    font-size: 16px;
+    color: red;
+}
+
+.discount h2 {
+    text-align: center;
+    font-family: MagicFontBold;
+    font-size: 18px;
+    text-decoration: line-through;
+    color: rgb(89,89,89);
+}
+
+.reviews {
+    width: 100%;
+    height: 338px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 6px 5px -3px rgba(194,194,194,1);
+    /*box-shadow: 0px 0px 5px 2px rgba(194,194,194,1);*/
+}
+
+    .reviews h1 {
+        font-family: MagicFontRegular;
+        font-size: 48px;
+    }
+
+#carousel {
+    width: 733px;
+    height: 181px;
+    margin-top: 35px;
+}
+
+    #carousel li {
+        position: absolute;
+        visibility: hidden;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #carousel .person {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        #carousel .person h6 {
+            font-size: 16px;
+            font-family: MagicFontBold;
+        }
+
+        #carousel .person .photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url(img/photo.jpg);
+            margin-bottom: 15px;
+        }
+
+    #carousel .review {
+        width: 530px;
+        height: 120px;
+        border-radius: 5px;
+        position: relative;
+        margin-top: 12px;
+        box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+        display: flex;
+        justify-content: center;
+    }
+
+        #carousel .review p {
+            width: 430px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-family: MagicFontLight;
+            line-height: 18px;
+            text-align: center;
+        }
+
+#prev {
+    width: 45px;
+    height: 46px;
+    background: url(img/left.png);
+    position: absolute;
+    left: 135px;
+    top: 130px;
+    cursor: pointer;
+}
+
+#next {
+    width: 45px;
+    height: 46px;
+    background: url(img/right.png);
+    position: absolute;
+    right: 135px;
+    top: 130px;
+    cursor: pointer;
+}
+
+.order {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: MagicFontBold;
+    font-size: 16px;
+}
+
+    .order h1 {
+        font-family: MagicFontRegular;
+        font-size: 48px;
+    }
+
+    .order ul {
+        display: flex;
+        justify-content: space-between;
+        width: 1088px;
+    }
+
+        .order ul li {
+            text-align: center;
+            width: 215px;
+        }
+
+            .order ul li img {
+                margin-bottom: 25px;
+            }
+
+/*#carousel .review:before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 14px 28px 0 0;
+            border-color: #007bff transparent transparent transparent;
+            position: absolute;
+            bottom: -14px;
+            left: 40px;
+            -webkit-box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.75);
+        }*/
+
+
+.horizontal-container {
+    display: flex;
+    width: 1237px;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+
+
+#gallery {
+    width: 608px;
+    height: 290px;
+}
+
+    #gallery > li {
+        position: relative;
+        float: left;
+        z-index: 9999;
+        width: 190px;
+        height: 85px;
+    }
+
+        #gallery > li > img {
+            width: 190px;
+            height: 85px;
+            transition: .1s transform;
+            /*transform: translateZ(0); /* hack */
+        }
+
+.fifth {
+    margin: 0 18px 0 18px;
+}
+
+.second {
+    margin: 0 18px 0 18px;
+}
+
+.first, .third {
+    margin-bottom: 18px;
+}
+
+.seventh, .nine {
+    margin-top: 18px;
+}
+
+.eight {
+    margin: 18px 18px 0 18px;
+}
+
+
+footer {
+    width: 100%;
+    height: 550px;
+    background: url(img/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.privacy-policy {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .privacy-policy a {
+        font-family: MagicFontBold;
+        font-size: 14px;
+        color: black;
+    }
+
+    .privacy-policy .contacts {
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+        margin-left: 50px;
+    }
+
+    .contacts li a {
+        text-decoration: none;
+    }
+
+.vk:before {
+    content: "\f189";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+.facebook:before {
+    content: "\f230";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+.insta:before {
+    content: "\f16d";
+    font-family: FontAwesome;
+    font-size: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content { 
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
