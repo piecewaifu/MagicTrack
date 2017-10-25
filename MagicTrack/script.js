@@ -2,14 +2,23 @@ var id;
 var length;
 
 window.onload = function () {
+    var closeBtn = document.getElementById("close");
     id = 1;
     length = document.getElementById("carousel").getElementsByTagName("li").length;
     document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.visibility = "visible";
+    galleryLength = document.getElementById("gallery").getElementsByTagName("li").length;
+    gallery = document.getElementById("gallery");
 
     setInterval(random, 1000);  
 
     var photoID;
     var ul = document.getElementById('gallery'); // Parent
+    var zoomed = document.getElementById("zoomed");
+    var zoomedImg = document.getElementById("zoomed-content");
+
+    closeBtn.addEventListener('click', function () {
+        zoomed.style.display = "none";
+    });
 
     ul.addEventListener('click', function (e) {
         var target = e.target; // Clicked element
@@ -19,29 +28,18 @@ window.onload = function () {
         }
         if (target.tagName === 'LI') {
             photoID = target.id; // Check if the element is a LI
-            alert(target.id);
+            zoomed.style.display = "flex";
+            zoomedImg.style.backgroundImage = "url(gallery/" + (photoID) + ".jpg)";
         }
     });
 
-    //var modal = document.getElementsByClassName('myModal')[0];
 
-    //// Get the image and insert it inside the modal - use its "alt" text as a caption
-    //var img = document.getElementsByClassName('myImg')[0];
-    //var modalImg = document.getElementById("img" + toString(photoID));
-    //var captionText = document.getElementById("caption");
-    //img.onclick = function () {
-    //    modal.style.display = "block";
-    //    modalImg.src = this.src;
-    //    captionText.innerHTML = this.alt;
-    //}
 
-    //// Get the <span> element that closes the modal
-    //var span = document.getElementsByClassName("close")[0];
+    var gallery = document.getElementById("gallery").getElementsByTagName("li").length;
 
-    //// When the user clicks on <span> (x), close the modal
-    //span.onclick = function () {
-    //    modal.style.display = "none";
-    //}
+    for (var i = 0; i < gallery; i++) {
+        document.getElementById("gallery").getElementsByTagName("li")[i].style.backgroundImage = "url(gallery/" + (i + 1) + ".jpg)";
+    }
 }
 
 function showMessage() {

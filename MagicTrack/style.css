@@ -232,6 +232,11 @@ header {
             margin-right: 23px;
         }
 
+            .choose-track .items .item .item-photo {
+                height: 30%;
+                width: 95%;
+            }
+
             .choose-track .items .item:last-child {
                 margin: 0;
             }
@@ -488,6 +493,46 @@ button {
 }
 
 
+#zoomed {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    z-index: 10000000000000;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+
+}
+
+#zoomed-content {
+    width: 1000px;
+    height: 600px;
+    background-color: white;
+    position: relative;
+            background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+}
+
+#close {
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+    #close:before {
+        content: "\f00d";
+        font-family: FontAwesome;
+        font-size: 50px;
+        position: absolute;
+        right: 0;
+        top: -50px;
+        cursor: pointer;
+    }
+
 #gallery {
     width: 608px;
     height: 290px;
@@ -497,15 +542,21 @@ button {
         position: relative;
         float: left;
         z-index: 9999;
-        width: 190px;
-        height: 85px;
+        width: 188px;
+        height: 83px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border: 1px solid rgb(148, 148, 148);
+        background-color: rgb(245,245,245);
+        /*transform: scale(1.2);*/
     }
 
         #gallery > li > img {
+            position: absolute;
             width: 190px;
             height: 85px;
             transition: .1s transform;
-            /*transform: translateZ(0); /* hack */
         }
 
 .fifth {
@@ -582,63 +633,4 @@ footer {
     content: "\f16d";
     font-family: FontAwesome;
     font-size: 20px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-/* Add Animation - Zoom in the Modal */
-.modal-content { 
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-}
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
 }
