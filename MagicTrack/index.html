@@ -22,11 +22,19 @@
             <form>
                 <h1>Обратный звонок</h1>
                 <div class="input-container">
-                    <p><img src="img/form_face.png" alt="face" /><input type="text" placeholder="Введите ваше имя" required /></p>
-                    <p><img src="img/form_phone.png" alt="face" /><input type="text" placeholder="+7(432) 000-00-00" required /></p>
+                    <p>
+                        <img src="img/form_face.png" alt="face" />
+                        <input id="callbackName" type="text" placeholder="Введите ваше имя" 
+                               data-min-length="2" data-max-length="15"
+                                />
+                    </p>
+                    <p>
+                        <img src="img/form_phone.png" alt="face" />
+                        <input id="callbackPhone" type="text" placeholder="+7(432) 000-00-00" 
+                               data-pattern="\+7(\d\d\d) \d\d\d-\d\d-\d\d"
+                                />
+                    </p>
                 </div>
-                <!-- Прикольно :) а клік по кнопці обробити забув? -->
-                <!--тепер onclick додається викликом attachClickHandler-->
                 <a id="send-callback" class="button" href="#">отправить</a>
             </form>
         </div>
@@ -35,15 +43,19 @@
     <div id="orderForm">
         <div class="container">
             <h1>Оформление заказа</h1>
-            <span id="close-callback-form" class="close-button"></span>
+            <span id="close-callback-form" class="close-button" onclick="hideOrderForm()"></span>
             <form>
                 <p>
                     <img src="img/form_face.png" alt="face" />
-                    <input id="customerName" type="text" placeholder="Введите ваше имя" required />
+                    <input id="customerName" type="text" placeholder="Введите ваше имя" 
+                           data-min-length="2" data-max-length="15"
+                            />
                 </p>
                 <p>
                     <img src="img/form_phone.png" alt="face" />
-                    <input id="customerPhone" type="text" placeholder="+7(432) 000-00-00" required />
+                    <input id="customerPhone" type="text" placeholder="+7(432) 000-00-00" 
+                           data-pattern="+7(\d\d\d) \d\d\d-\d\d-\d\d"
+                            />
                 </p>
                 <select id="goods" onchange="handleTrackSelected(event)">
                     <option data-price="1 790" value="ГОНКА">ГОНКА</option>
@@ -52,7 +64,7 @@
                     <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
                     <option data-price="2 490" value="БОЛИД">БОЛИД</option>
                     <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
-                    <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
+                    <option data-price="1 790" value="ДРИФТ">ДРИФТ</option>
                     <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
                 </select>
 
@@ -69,7 +81,7 @@
                     </div>
                 </div>
             </form>
-            <a id="send-callback" class="button" href="#">отправить</a>
+            <a id="send-order" class="button" onclick="sendOrder(event)" href="">отправить</a>
         </div>
     </div>
 
@@ -138,6 +150,7 @@
         <ul class="items">
             <li class="item">
                 <img class="item-photo" src="MainPic/Gonka.png" alt="item photo" />
+                <h3>ГОНКА</h3>
                 <div class="price">
                     <h1>1 790 <span>руб.</span></h1>
                 </div>
@@ -155,6 +168,7 @@
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Gonka2.png" alt="item photo" />
+                <h3>ГОНКА - 2</h3>
                 <div class="price">
                     <h1>2 990 <span>руб.</span></h1>
                     <div class="discount">
@@ -176,6 +190,7 @@
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
+                <h3>ВИРАЖ</h3>
                 <div class="price">
                     <h1>2 190 <span>руб.</span></h1>
                 </div>
@@ -193,6 +208,7 @@
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
+                <h3>ВИРАЖ - 2</h3>
                 <div class="price">
                     <h1>3 790 <span>руб.</span></h1>
                     <div class="discount">
@@ -216,6 +232,7 @@
         <ul class="items">
             <li class="item">
                 <img class="item-photo" src="MainPic/Bolid.png" alt="item photo" />
+                <h3>БОЛИД</h3>
                 <div class="price">
                     <h1>2 490 <span>руб.</span></h1>
                 </div>
@@ -233,6 +250,7 @@
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Bolid2.png" alt="item photo" />
+                <h3>БОЛИД - 2</h3>
                 <div class="price">
                     <h1>4 290 <span>руб.</span></h1>
                     <div class="discount">
@@ -254,6 +272,7 @@
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
+                <h3>ДРИФТ</h3>
                 <div class="price">
                     <h1>1 790 <span>руб.</span></h1>
                 </div>
@@ -271,6 +290,7 @@
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
+                <h3>ДРИФТ - 2</h3>
                 <div class="price">
                     <h1>4 790 <span>руб.</span></h1>
                     <div class="discount">

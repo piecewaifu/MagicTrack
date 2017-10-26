@@ -246,6 +246,12 @@ header {
             margin-right: 23px;
         }
 
+            .choose-track .items .item h3 {
+                font-family: MagicFontBold;
+                font-size: 30px;
+                /*color: rgb(60, 221, 29);*/
+            }
+
             .choose-track .items .item .item-photo {
                 height: 30%;
                 width: 95%;
@@ -823,6 +829,7 @@ footer {
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        position: relative;
     }
 
 .total-price {

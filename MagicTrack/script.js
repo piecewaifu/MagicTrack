@@ -10,6 +10,12 @@ window.onload = function () {
     attachClickHandler("show-callback-form", showCallbackForm);
     attachClickHandler("close-callback-form", hideCallbackForm);
     attachClickHandler("send-callback", sendCallback);
+    
+    var items = document.body.getElementsByClassName("item");
+    for (var i = 0; i < items.length; i++) {
+        items[i].getElementsByClassName("button")[0].onclick = showOrderForm;
+    }
+
 
     initEmailJs();
 
@@ -57,8 +63,78 @@ window.onload = function () {
     startVideoLoading();
 }
 
-function showOrderForm() {
+function getValidImputValue(id) {
+    var input = document.getElementById(id);
+    var value = input.value;
+
+    if (input.dataset.pattern) {
+        var regex = new RegExp(input.dataset.pattern);
+        if (!regex.test(value)) {
+            input.style.borderColor = "red";
+            return "";
+        }
+    }
+
+    if (input.dataset.minLength) {
+        var minLength = parseInt(input.dataset.minLength);
+        if (minLength && minLength > value.length) {
+            input.style.borderColor = "red";
+            return "";
+        }
+    }
+
+    if (input.dataset.maxLength) {
+        var maxLength = parseInt(input.dataset.maxLength);
+        if (maxLength && maxLength < value.length) {
+            input.style.borderColor = "red";
+            return "";
+        }
+    }
+
+    input.style.borderColor = "";
+    return value;
+}
+
+function sendOrder() {
+    event.preventDefault();
+    var quantity = parseInt(document.getElementById("quantity").innerHTML);
+    var selected = document.getElementById("goods").selectedOptions[0];
+    var trackName = selected.value;
+    var priceString = selected.dataset.price;
+    var price = parseInt(priceString.replace(" ", ""))
+    var amount = (quantity * price / 1000).toFixed(3).replace(".", " ");
+    var customerName = getValidImputValue("customerName");
+    var customerPhone = getValidImputValue("customerPhone");
+
+    if (!customerName || !customerPhone) {
+        alert("error!");
+    }
+
+}
+
+function showOrderForm(event) {
+    
+
+    var button = event.target;
+    var li = button.parentNode;
+    var h3 = li.getElementsByTagName("h3")[0];
+    var trackName = h3.innerHTML;
+
+    var select = document.getElementById("goods");
+    for (var i = 0; i < select.length; i++) {
+        var option = select[i];
+        if (option.value === trackName) {
+            select.selectedIndex = i;
+            updateAmount();
+            break;
+        }
+    }
+
     show('orderForm', 'flex');
+}
+
+function hideOrderForm() {
+    hide('orderForm');
 }
 
 function incQuantity() {
