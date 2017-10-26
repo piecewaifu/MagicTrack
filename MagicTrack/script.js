@@ -1,4 +1,4 @@
-var id;
+п»їvar id;
 var length;
 var photoID;
 var galleryLength;
@@ -102,7 +102,7 @@ function sendOrder() {
     var trackName = selected.value;
     var priceString = selected.dataset.price;
     var price = parseInt(priceString.replace(" ", ""))
-    var amount = (quantity * price / 1000).toFixed(3).replace(".", " ");
+    var amount = (quantity * price / 1000).toFixed(3).replace(".", " ") + " СЂСѓР±.";
     var customerName = getValidImputValue("customerName");
     var customerPhone = getValidImputValue("customerPhone");
 
@@ -110,7 +110,17 @@ function sendOrder() {
         alert("error!");
         return;
     }
-    alert("mega lul!");
+    
+    var result = emailjs.send("gmail", "order", {
+        "customerName": customerName,
+        "customerPhone": customerPhone,
+        "trackName": trackName,
+        "price": price + " СЂСѓР±.",
+        "quantity": quantity + "С€С‚.",
+        "amount": amount
+    });
+
+    hideOrderForm();
 }
 
 function showOrderForm(event) {
@@ -174,11 +184,10 @@ function handleTrackSelected(event) {
     var customerPhone = document.getElementById("customerPhone").value;
 
     updateAmount();
-    alert("ky!\n" + trackName + "\n" + price + "rub.\n" + customerName + "\n" + customerPhone);
 }
 
 function showCallbackForm() {
-    //callbackForm.style.display = "flex";  // отут писало "callbackForm is undefined"
+    //callbackForm.style.display = "flex";  // РѕС‚СѓС‚ РїРёСЃР°Р»Рѕ "callbackForm is undefined"
     show('callback', 'flex');
 }
 
@@ -223,11 +232,6 @@ function sendCallback() {
         console.error("emailjs is " + emailjs);
         return;
     }
-
-    // отут витягни з форми все, що ввів юзер і передай як параметри 
-    // а в темплейті встав ці параметри в текст листа
-    // на кшталт "Якийсь {{customerName}} замовив дзвінок на телефон {{phone}}"
-    // !!! --- додай валідацію номера телефону --- !!!
 
     var callbackName = getValidImputValue("callbackName");
     var callbackPhone = getValidImputValue("callbackPhone");
