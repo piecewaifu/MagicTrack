@@ -35,6 +35,20 @@
     src: url(MagicFont/SF-UI-Display-Black.ttf);
 }
 
+.alert {
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    height: 50px;
+    background: red;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    user-select: none;
+    opacity: 0;
+    transition: ease-in-out all .5s;
+}
+
 #message {
     position: fixed;
     width: 300px;
@@ -692,7 +706,7 @@ footer {
     display: none;
 }
 
-    #callback .container span {
+    .close-button {
         display: block;
         width: 15px;
         height: 15px;
@@ -704,11 +718,11 @@ footer {
         cursor: pointer;
     }
 
-    #callback p {
+    #callback p, #orderForm p {
         position: relative;
     }
 
-    #callback input {
+    #callback input, #orderForm input {
         width: 335px;
         padding-left: 50px;
         height: 45px;
@@ -729,15 +743,14 @@ footer {
         box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.5);
     }
 
-    #callback img {
+    #callback img, #orderForm img {
         position: absolute;
         top: 50%;
         left: 15px;
         margin-top: -12px;
-
     }
 
-        /*#callback p:nth-child(1):before {
+    /*#callback p:nth-child(1):before {
             content: "";
             display: block;
             width: 24px;
@@ -745,7 +758,7 @@ footer {
             background: url(img/form_face.png);
         }*/
 
-    #callback h1 {
+    #callback h1, #orderForm h1 {
         font-family: MagicFontRegular;
         font-size: 26px;
     }
@@ -766,4 +779,106 @@ footer {
             justify-content: space-around;
             flex-direction: column;
             align-items: center;
+        }
+
+
+
+#orderForm {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000000000000;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+    #orderForm select {
+        width: 386px;
+        height: 45px;
+        border: 1px solid black;
+        border-radius: 2px;
+        font-family: MagicFontRegular;
+        font-size: 16px;
+        padding: 0 15px 0 15px;
+    }
+
+    #orderForm form {
+        width: 412px;
+        height: 237px;
+        box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #orderForm .container {
+        width: 500px;
+        height: 413px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+.total-price {
+    width: 386px;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart {
+    width: 148px;
+    padding-left: 40px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    #cart p {
+        font-family: MagicFontRegular;
+        font-size: 16px;
+    }
+
+#minus {
+    width: 20px;
+    height: 20px;
+    background: url(img/minus.png);
+    cursor: pointer;
+}
+
+#plus {
+    width: 21px;
+    height: 20px;
+    background: url(img/plus.png);
+    cursor: pointer;
+}
+
+#total {
+    text-align: center;
+    width: 190px;
+}
+
+    #total p {
+        font-family: MagicFontBold;
+        font-size: 16px;
+    }
+
+    #total h1 {
+        font-family: MagicFontBold;
+        font-size: 15px;
+    }
+
+        #total h1 span {
+            font-size: 30px;
+            text-transform: uppercase;
         }

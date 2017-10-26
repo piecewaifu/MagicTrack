@@ -6,6 +6,13 @@ var zoomedImg;
 var callbackForm;
 
 window.onload = function () {
+
+    attachClickHandler("show-callback-form", showCallbackForm);
+    attachClickHandler("close-callback-form", hideCallbackForm);
+    attachClickHandler("send-callback", sendCallback);
+
+    initEmailJs();
+
     var closeBtn = document.getElementById("close");
     id = 1;
     length = document.getElementById("carousel").getElementsByTagName("li").length;
@@ -15,9 +22,9 @@ window.onload = function () {
 
     callbackForm = document.getElementById("callback");
 
-    setInterval(random, 1000);  
+    setInterval(random, 1000);
 
-    
+
     var ul = document.getElementById('gallery'); // Parent
     var zoomed = document.getElementById("zoomed");
     zoomedImg = document.getElementById("zoomed-content");
@@ -46,14 +53,146 @@ window.onload = function () {
     for (var i = 0; i < gallery; i++) {
         document.getElementById("gallery").getElementsByTagName("li")[i].style.backgroundImage = "url(gallery/" + (i + 1) + ".jpg)";
     }
+
+    startVideoLoading();
+}
+
+function showOrderForm() {
+    show('orderForm', 'flex');
+}
+
+function incQuantity() {
+    var element = document.getElementById("quantity");
+    var quantity = parseInt(element.innerHTML);
+    element.innerHTML = ++quantity;
+    updateAmount();
+}
+
+function decQuantity() {
+    var element = document.getElementById("quantity");
+    var quantity = parseInt(element.innerHTML);
+    if (quantity > 1) {
+        element.innerHTML = --quantity;
+        updateAmount();
+    }
+}
+
+function updateAmount() {
+    var quantity = parseInt(document.getElementById("quantity").innerHTML);
+    var selected = document.getElementById("goods").selectedOptions[0];
+    var trackName = selected.value;
+    var priceString = selected.dataset.price;
+    var price = parseInt(priceString.replace(" ", ""))
+    
+    var amount = (quantity * price / 1000).toFixed(3).replace(".", " ");
+    document.getElementById("amount").innerHTML = amount;
+}
+
+function handleTrackSelected(event) {
+    var selected = event.target.selectedOptions[0];
+    var trackName = selected.value;
+    var priceString = selected.dataset.price;
+    var price = parseInt(priceString.replace(" ", ""))
+    var customerName = document.getElementById("customerName").value;
+    var customerPhone = document.getElementById("customerPhone").value;
+
+    updateAmount();
+    alert("ky!\n" + trackName + "\n" + price + "rub.\n" + customerName + "\n" + customerPhone);
 }
 
 function showCallbackForm() {
-    callbackForm.style.display = "flex";
+    //callbackForm.style.display = "flex";  // отут писало "callbackForm is undefined"
+    show('callback', 'flex');
 }
 
-function closeForm() {
-    callbackForm.style.display = "none";
+function hideCallbackForm() {
+    hide('callback');
+}
+
+function show(id, display) {
+    var element = document.getElementById(id);
+    if (!element) {
+        console.error("Element #" + element + " is not found by show()");
+        return;
+    }
+    if (!display) {
+        display = "block";
+    }
+
+    element.style.display = display;
+}
+
+function hide(id) {
+    var element = document.getElementById(id);
+    if (!element) {
+        console.error("Element #" + id + " is not found by hide()");
+        return;
+    }
+
+    element.style.display = "none";
+}
+
+function initEmailJs() {
+    if (!emailjs) {
+        console.error("emailjs is " + emailjs);
+        return;
+    }
+
+    emailjs.init("user_1SpINizilajHMYgt4Mzl6");
+}
+
+function sendCallback() {
+    if (!emailjs) {
+        console.error("emailjs is " + emailjs);
+        return;
+    }
+
+    // отут витягни з форми все, що ввів юзер і передай як параметри 
+    // а в темплейті встав ці параметри в текст листа
+    // на кшталт "Якийсь {{customerName}} замовив дзвінок на телефон {{phone}}"
+    // !!! --- додай валідацію номера телефону --- !!!
+
+    if (callbackForm.getElementsByTagName("input")[0].value == "" || callbackForm.getElementsByTagName("input")[1].value == 0) {
+        document.getElementsByClassName("alert")[0].style.opacity = "1";
+        setTimeout(function () { document.getElementsByClassName("alert")[0].style.opacity = "0"; }, 1500);
+        return;
+    }
+
+    var result = emailjs.send("gmail", "callback", { "name": callbackForm.getElementsByTagName("input")[0].value, "phone": callbackForm.getElementsByTagName("input")[1].value });
+    console.log("Email send result = " + result);
+
+    hide('callback');
+}
+
+function startVideoLoading() {
+    var id = "video-container";
+
+    var container = document.getElementById(id);
+    if (!container) {
+        console.error("Element #" + id + " is not found by startVideoLoading()");
+        return;
+    }
+
+    setTimeout(function () {
+
+        var iframe = document.createElement("iframe");
+        iframe.width = 470;
+        iframe.height = 250;
+        iframe.src = "https://www.youtube.com/embed/kww4RDWnyLk";
+
+        container.appendChild(iframe);
+    }, 11);
+}
+
+function attachClickHandler(id, handler) {
+    var element = document.getElementById(id);
+    if (!element) {
+        console.error("Element #" + id + " is not found by attachClick()");
+        return;
+    }
+
+    element.addEventListener("click", handler)
+    console.log("Click handler is attached to #" + id);
 }
 
 function nextImage() {
@@ -77,20 +216,6 @@ function prevImage() {
 }
 
 
-function showMessage() {
-    var messageBox = document.getElementById("message");
-    messageBox.style.visibility = "visible";
-    messageBox.style.opacity = "1";
-
-    setTimeout(hide, 2000);
-}
-
-function hide() {
-    var messageBox = document.getElementById("message");
-    messageBox.style.visibility = "invisible";
-    messageBox.style.opacity = "0";
-}
-
 
 function random() {
     var number = Math.floor((Math.random() * 100) + 1);
@@ -100,6 +225,20 @@ function random() {
     else {
         return;
     }
+}
+
+function showMessage() {
+    var messageBox = document.getElementById("message");
+    messageBox.style.visibility = "visible";
+    messageBox.style.opacity = "1";
+
+    setTimeout(hideMessage, 2000);
+}
+
+function hideMessage() {
+    var messageBox = document.getElementById("message");
+    messageBox.style.visibility = "invisible";
+    messageBox.style.opacity = "0";
 }
 
 function turnRight() {

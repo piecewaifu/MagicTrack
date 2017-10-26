@@ -1,25 +1,14 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">-->
     <title>i will kms</title>
 
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_1SpINizilajHMYgt4Mzl6");
-        })();
-
-        function sendCallback() {
-            emailjs.send("gmail", "qwerty", { "name": "Ivan", "notes": "2" });
-
-            
-        }
-    </script>
 </head>
 <body>
     <div id="message">
@@ -28,18 +17,61 @@
 
     <div id="callback">
         <div class="container">
-            <span onclick="closeForm()"></span>
+            <h1 class="alert">Поля должны быть заполнены!</h1>
+            <span id="close-callback-form" class="close-button"></span>
             <form>
                 <h1>Обратный звонок</h1>
                 <div class="input-container">
-                    <p><img src="img/form_face.png" alt="face" /><input type="text" name="name" placeholder="Введите ваше имя" required /></p>
-                    <p><img src="img/form_phone.png" alt="face" /><input type="text" name="name" placeholder="+7(432) 000-00-00" required /></p>
+                    <p><img src="img/form_face.png" alt="face" /><input type="text" placeholder="Введите ваше имя" required /></p>
+                    <p><img src="img/form_phone.png" alt="face" /><input type="text" placeholder="+7(432) 000-00-00" required /></p>
                 </div>
-                <a class="button" href="#">отправить</a>
+                <!-- Прикольно :) а клік по кнопці обробити забув? -->
+                <!--тепер onclick додається викликом attachClickHandler-->
+                <a id="send-callback" class="button" href="#">отправить</a>
             </form>
         </div>
     </div>
 
+    <div id="orderForm">
+        <div class="container">
+            <h1>Оформление заказа</h1>
+            <span id="close-callback-form" class="close-button"></span>
+            <form>
+                <p>
+                    <img src="img/form_face.png" alt="face" />
+                    <input id="customerName" type="text" placeholder="Введите ваше имя" required />
+                </p>
+                <p>
+                    <img src="img/form_phone.png" alt="face" />
+                    <input id="customerPhone" type="text" placeholder="+7(432) 000-00-00" required />
+                </p>
+                <select id="goods" onchange="handleTrackSelected(event)">
+                    <option data-price="1 790" value="ГОНКА">ГОНКА</option>
+                    <option data-price="2 990" value="ГОНКА - 2">ГОНКА - 2</option>
+                    <option data-price="2 190" value="ВИРАЖ">ВИРАЖ</option>
+                    <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="2 490" value="БОЛИД">БОЛИД</option>
+                    <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
+                    <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
+                    <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
+                </select>
+
+                <div class="total-price">
+                    <div id="cart">
+                        <img src="img/cart.png" alt="cart" />
+                        <span id="minus" onclick="decQuantity()"></span>
+                        <p><span id="quantity">1</span> ШТ.</p>
+                        <span id="plus" onclick="incQuantity()"></span>
+                    </div>
+                    <div id="total">
+                        <p>сумма заказа</p>
+                        <h1><span id="amount">x xxx</span> руб.</h1>
+                    </div>
+                </div>
+            </form>
+            <a id="send-callback" class="button" href="#">отправить</a>
+        </div>
+    </div>
 
 
     <div id="zoomed">
@@ -55,11 +87,12 @@
             <img src="img/logo.png" alt="logo" height="62" width="101" />
             <h1>Гоночные трассы MAGIC TRACK с <br />доставкой по Москве</h1>
             <p>+7(499)490-13-88</p>
-            <a class="button" onclick="showCallbackForm()">обратный звонок</a>
+            <!--тепер onclick додається викликом attachClickHandler-->
+            <a id="show-callback-form" class="button" href="#">обратный звонок</a>
         </div>
     </header>
 
-    <div class="magic-track">
+    <div id="video-container" class="magic-track">
         <div class="describe">
             <h1>Волшебная трасса</h1>
             <p>
@@ -68,7 +101,8 @@
             <a href="#">смотрите видеоинструкцию <img src="img/arrows.png" alt="arrows" /></a>
         </div>
 
-        <iframe width="470" height="250" src="https://www.youtube.com/embed/kww4RDWnyLk"></iframe>
+        <!--тепер цей iframe додається викликом startVideoLoading() - щоб не затримувало window.onload -->
+        <!--<iframe width="470" height="250" src="https://www.youtube.com/embed/kww4RDWnyLk"></iframe>-->
     </div>
 
     <div class="track-features">
@@ -361,5 +395,6 @@
             </ul>
         </div>
     </footer>
+
 </body>
 </html>
