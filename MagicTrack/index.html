@@ -31,7 +31,7 @@
                     <p>
                         <img src="img/form_phone.png" alt="face" />
                         <input id="callbackPhone" type="text" placeholder="+7(432) 000-00-00" 
-                               data-pattern="\+7(\d\d\d) \d\d\d-\d\d-\d\d"
+                               data-pattern="^\+7\(\d\d\d\) \d\d\d-\d\d-\d\d$"
                                 />
                     </p>
                 </div>
@@ -54,7 +54,7 @@
                 <p>
                     <img src="img/form_phone.png" alt="face" />
                     <input id="customerPhone" type="text" placeholder="+7(432) 000-00-00" 
-                           data-pattern="+7(\d\d\d) \d\d\d-\d\d-\d\d"
+                           data-pattern="^\+7\(\d\d\d\) \d\d\d-\d\d-\d\d$"
                             />
                 </p>
                 <select id="goods" onchange="handleTrackSelected(event)">

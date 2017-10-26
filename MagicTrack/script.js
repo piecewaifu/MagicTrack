@@ -108,8 +108,9 @@ function sendOrder() {
 
     if (!customerName || !customerPhone) {
         alert("error!");
+        return;
     }
-
+    alert("mega lul!");
 }
 
 function showOrderForm(event) {
@@ -228,9 +229,14 @@ function sendCallback() {
     // на кшталт "Якийсь {{customerName}} замовив дзвінок на телефон {{phone}}"
     // !!! --- додай валідацію номера телефону --- !!!
 
-    if (callbackForm.getElementsByTagName("input")[0].value == "" || callbackForm.getElementsByTagName("input")[1].value == 0) {
+    var callbackName = getValidImputValue("callbackName");
+    var callbackPhone = getValidImputValue("callbackPhone");
+
+    if (!callbackName || !callbackPhone) {
         document.getElementsByClassName("alert")[0].style.opacity = "1";
-        setTimeout(function () { document.getElementsByClassName("alert")[0].style.opacity = "0"; }, 1500);
+        setTimeout(function () {
+            document.getElementsByClassName("alert")[0].style.opacity = "0";
+        }, 1500);
         return;
     }
 
