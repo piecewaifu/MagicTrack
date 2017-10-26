@@ -7,26 +7,57 @@
     <script type="text/javascript" src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <title>i will kms</title>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_1SpINizilajHMYgt4Mzl6");
+        })();
+
+        function sendCallback() {
+            emailjs.send("gmail", "qwerty", { "name": "Ivan", "notes": "2" });
+
+            
+        }
+    </script>
 </head>
 <body>
     <div id="message">
         <p>Ещё один набоp "MAGIC TRACK" был куплен!</p>
     </div>
 
-    <div id="zoomed">
-        <div id="zoomed-content">
-            <span id="close"></span>
+    <div id="callback">
+        <div class="container">
+            <span onclick="closeForm()"></span>
+            <form>
+                <h1>Обратный звонок</h1>
+                <div class="input-container">
+                    <p><img src="img/form_face.png" alt="face" /><input type="text" name="name" placeholder="Введите ваше имя" required /></p>
+                    <p><img src="img/form_phone.png" alt="face" /><input type="text" name="name" placeholder="+7(432) 000-00-00" required /></p>
+                </div>
+                <a class="button" href="#">отправить</a>
+            </form>
         </div>
     </div>
 
-	<header> 
-		<div>
-            <img src="img/logo.png" alt="logo" height="62" width="101"/>
+
+
+    <div id="zoomed">
+        <div id="zoomed-content">
+            <span id="close"></span>
+            <div onclick="nextImage()" id="nextImage"></div>
+            <div onclick="prevImage()" id="prevImage"></div>
+        </div>
+    </div>
+
+    <header>
+        <div>
+            <img src="img/logo.png" alt="logo" height="62" width="101" />
             <h1>Гоночные трассы MAGIC TRACK с <br />доставкой по Москве</h1>
             <p>+7(499)490-13-88</p>
-            <button>обратный звонок</button>
+            <a class="button" onclick="showCallbackForm()">обратный звонок</a>
         </div>
-	</header> 
+    </header>
 
     <div class="magic-track">
         <div class="describe">
@@ -34,16 +65,16 @@
             <p>
                 Готовы ли Вы к настоящей гонке? Представляем вам Волшебную трассу - потрясающий гоночный трек, который принимает любую форму и светится в темноте! Гоночная трасса состоит из 200 деталей четырех разных цветов, которые вы можете сочетать как угодно! У вас есть уникальная возможность создать гибкую трассу-конструктор абсолютно любой формы и менять ее дизайн по вашему настроению. С Magic Tracks можно играть даже в темноте. Благодаря светодиодным фарам машинки гонки превращаются в настояще шоу, наполняя комнату великолепными, сказочными, яркими огнями и создавая незабываемую атмосферу азарта и радости!
             </p>
-            <a href="#">смотрите видеоинструкцию <img src="img/arrows.png" alt="arrows"/></a>
+            <a href="#">смотрите видеоинструкцию <img src="img/arrows.png" alt="arrows" /></a>
         </div>
 
-        <iframe width="470" height="250" src="https://www.youtube.com/embed/SpwZr5LY6MY"></iframe>
+        <iframe width="470" height="250" src="https://www.youtube.com/embed/kww4RDWnyLk"></iframe>
     </div>
 
     <div class="track-features">
         <h1>Особенности Волшебной Трассы</h1>
         <div class="container">
-            <img src="img/track.png" alt="track"/>
+            <img src="img/track.png" alt="track" />
             <ul class="features">
                 <li>
                     <h1>Гибкая трасса</h1>
@@ -72,7 +103,7 @@
 
         <ul class="items">
             <li class="item">
-                <img class="item-photo" src="MainPic/Gonka.png" alt="item photo"/>
+                <img class="item-photo" src="MainPic/Gonka.png" alt="item photo" />
                 <div class="price">
                     <h1>1 790 <span>руб.</span></h1>
                 </div>
@@ -86,7 +117,7 @@
                     <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png"/> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Gonka2.png" alt="item photo" />
@@ -107,7 +138,7 @@
                     <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
@@ -124,7 +155,7 @@
                     <li><p><span>2</span> РАЗВИЛКИ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
@@ -145,7 +176,7 @@
                     <li><p><span>4</span> РАЗВИЛКИ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
         </ul>
         <ul class="items">
@@ -164,7 +195,7 @@
                     <li><p><span></span>ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Bolid2.png" alt="item photo" />
@@ -185,7 +216,7 @@
                     <li><p><span></span>ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
@@ -202,7 +233,7 @@
                     <li><p><span></span> ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
@@ -223,7 +254,7 @@
                     <li><p><span></span> ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <button><img src="img/shopping_cart.png" /> заказать</button>
+                <a class="button" href="#"><img src="img/shopping_cart.png" /> заказать</a>
             </li>
         </ul>
 
@@ -235,7 +266,7 @@
                 </li>
                 <li id="3" class="third">
                 </li>
-                <li id="4"> 
+                <li id="4">
                 </li>
                 <li id="5" class="fifth">
                 </li>
@@ -249,17 +280,8 @@
                 </li>
             </ul>
 
-            <div id="myModal" class="modal">
-
-                <!-- The Close Button -->
-                <span class="close">&times;</span>
-
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
-            </div>
-
-                <iframe width="608" height="290" src="https://www.youtube.com/embed/SpwZr5LY6MY"></iframe>
-            </div>
+            <iframe width="608" height="290" src="https://www.youtube.com/embed/kww4RDWnyLk"></iframe>
+        </div>
     </div>
 
     <div class="reviews">
@@ -297,7 +319,7 @@
             </li>
         </ul>
 
-        <button>оставить отзыв</button>
+        <a class="button">оставить отзыв</a>
 
         <div id="next" onclick="turnRight()"></div>
         <div id="prev" onclick="turnLeft()"></div>
@@ -307,7 +329,7 @@
         <h1>Как заказать?</h1>
         <ul>
             <li>
-                <img src="img/face.png" alt="face"/>
+                <img src="img/face.png" alt="face" />
                 <p>Вы оформляете<br /> заказ на сайте или<br /> звоните нам</p>
             </li>
             <li>
@@ -333,9 +355,9 @@
         <div class="privacy-policy">
             <a href="#">Политика конфиденциальности</a>
             <ul class="contacts">
-                <li><a class="vk" href="#"></a></li>
-                <li><a class="facebook" href="#"></a></li>
-                <li><a class="insta" href="#"></a></li>
+                <li><a target="_blank" class="vk" href="#"></a></li>
+                <li><a target="_blank" class="facebook" href="https://vk.com/vsedorogu"></a></li>
+                <li><a target="_blank" class="insta" href="https://www.instagram.com/magictracks.shop/"></a></li>
             </ul>
         </div>
     </footer>
