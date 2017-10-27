@@ -96,10 +96,18 @@ function getValidImputValue(id) {
 }
 
 
+function showPivacyPolicy() {
+    show("privacy-policy", "flex")
+}
+
+function hidePivacyPolicy() {
+    hide("privacy-policy");
+}
+
 function leaveReview() {
-    var reviewerName = document.getElementById("reviewerName");
-    var reviewerCity = document.getElementById("reviewerCity");
-    var reviewerMessage = document.getElementById("reviewerMessage");
+    var reviewerName = getValidImputValue("reviewerName");
+    var reviewerCity = getValidImputValue("reviewerCity");
+    var reviewerMessage = getValidImputValue("reviewerMessage");
 
     //if (!reviewerName || !reviewerCity || reviewerMessage) {
     //    return;
@@ -111,6 +119,7 @@ function leaveReview() {
         "reviewerMessage": reviewerMessage
     });
 
+    alert("Сообщение было отправлено!");
     hideReviewFrom();
 }
 
@@ -138,6 +147,8 @@ function sendOrder() {
         "amount": amount
     });
 
+
+    alert("Сообщение было отправлено!");
     hideOrderForm();
 }
 
@@ -273,6 +284,7 @@ function sendCallback() {
     var result = emailjs.send("gmail", "callback", { "name": callbackForm.getElementsByTagName("input")[0].value, "phone": callbackForm.getElementsByTagName("input")[1].value });
     console.log("Email send result = " + result);
 
+    alert("Сообщение было отправлено!");
     hide('callback');
 }
 
