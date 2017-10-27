@@ -40,6 +40,30 @@
         </div>
     </div>
 
+    <div id="reviewForm">
+        <div class="container">
+            <span id="close-review-form" class="close-button" onclick="hideReviewFrom()"></span>
+            <h1>Отпраить отзыв</h1>
+            <form>
+                <p>
+                    <img src="img/form_face.png" alt="face" />
+                    <input id="reviewerName" type="text" placeholder="Введите ваше имя"
+                           data-min-length="2" data-max-length="15" />
+                </p>
+                <p>
+                    <img src="img/form_phone.png" alt="face" />
+                    <input id="reviewerCity" type="text" placeholder="ваш город"/>
+                </p>
+                <p>
+                    <img src="img/review.png" alt="face" />
+                    <textarea id="reviewerMessage" placeholder="оставить отзыв" rows="5" cols="50"></textarea>
+                </p>
+            </form>
+
+            <a id="send-review" class="button" href="#" onclick="leaveReview()">отправить</a>
+        </div>
+    </div>
+
     <div id="orderForm">
         <div class="container">
             <h1>Оформление заказа</h1>
@@ -373,7 +397,7 @@
             </li>
         </ul>
 
-        <a class="button">оставить отзыв</a>
+        <a class="button" onclick="showReviewForm()">оставить отзыв</a>
 
         <div id="next" onclick="turnRight()"></div>
         <div id="prev" onclick="turnLeft()"></div>

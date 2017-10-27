@@ -95,6 +95,25 @@ function getValidImputValue(id) {
     return value;
 }
 
+
+function leaveReview() {
+    var reviewerName = document.getElementById("reviewerName");
+    var reviewerCity = document.getElementById("reviewerCity");
+    var reviewerMessage = document.getElementById("reviewerMessage");
+
+    //if (!reviewerName || !reviewerCity || reviewerMessage) {
+    //    return;
+    //}
+
+    var result = emailjs.send("gmail", "review", {
+        "reviewerName": reviewerName,
+        "reviewerCity": reviewerCity,
+        "reviewerMessage": reviewerMessage
+    });
+
+    hideReviewFrom();
+}
+
 function sendOrder() {
     event.preventDefault();
     var quantity = parseInt(document.getElementById("quantity").innerHTML);
@@ -107,7 +126,6 @@ function sendOrder() {
     var customerPhone = getValidImputValue("customerPhone");
 
     if (!customerName || !customerPhone) {
-        alert("error!");
         return;
     }
     
@@ -146,6 +164,14 @@ function showOrderForm(event) {
 
 function hideOrderForm() {
     hide('orderForm');
+}
+
+function showReviewForm() {
+    show('reviewForm', 'flex');
+}
+
+function hideReviewFrom() {
+    hide('reviewForm');
 }
 
 function incQuantity() {
