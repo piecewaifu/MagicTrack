@@ -6,16 +6,20 @@ var zoomedImg;
 var callbackForm;
 
 window.onload = function () {
+    $("#callbackPhone").mask("+7(999) 999-9999");
+    $("#customerPhone").mask("+7(999) 999-9999");
 
     attachClickHandler("show-callback-form", showCallbackForm);
     attachClickHandler("close-callback-form", hideCallbackForm);
     attachClickHandler("send-callback", sendCallback);
-    
+
     var items = document.body.getElementsByClassName("item");
     for (var i = 0; i < items.length; i++) {
         items[i].getElementsByClassName("button")[0].onclick = showOrderForm;
     }
 
+    setTimeout(turnRight, 1);
+    setInterval(turnRight, 10000);
 
     initEmailJs();
 
@@ -67,13 +71,13 @@ function getValidImputValue(id) {
     var input = document.getElementById(id);
     var value = input.value;
 
-    if (input.dataset.pattern) {
-        var regex = new RegExp(input.dataset.pattern);
-        if (!regex.test(value)) {
-            input.style.borderColor = "red";
-            return "";
-        }
-    }
+    //if (input.dataset.pattern) {
+    //    var regex = new RegExp(input.dataset.pattern);
+    //    if (!regex.test(value)) {
+    //        input.style.borderColor = "red";
+    //        return "";
+    //    }
+    //}
 
     if (input.dataset.minLength) {
         var minLength = parseInt(input.dataset.minLength);
@@ -94,7 +98,6 @@ function getValidImputValue(id) {
     input.style.borderColor = "";
     return value;
 }
-
 
 function showPivacyPolicy() {
     show("privacy-policy", "flex")
@@ -137,7 +140,7 @@ function sendOrder() {
     if (!customerName || !customerPhone) {
         return;
     }
-    
+
     var result = emailjs.send("gmail", "order", {
         "customerName": customerName,
         "customerPhone": customerPhone,
@@ -153,7 +156,7 @@ function sendOrder() {
 }
 
 function showOrderForm(event) {
-    
+
 
     var button = event.target;
     var li = button.parentNode;
@@ -207,7 +210,7 @@ function updateAmount() {
     var trackName = selected.value;
     var priceString = selected.dataset.price;
     var price = parseInt(priceString.replace(" ", ""))
-    
+
     var amount = (quantity * price / 1000).toFixed(3).replace(".", " ");
     document.getElementById("amount").innerHTML = amount;
 }
@@ -368,13 +371,17 @@ function hideMessage() {
 function turnRight() {
     if (id >= length) {
         id = 1;
+        document.getElementById("carousel").getElementsByTagName("li")[length - 1].style.opacity = "0";
         document.getElementById("carousel").getElementsByTagName("li")[length - 1].style.visibility = "hidden";
         document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.visibility = "visible";
+        document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.opacity = "1";
     }
 
     else {
+        document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.opacity = "0";
         document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.visibility = "hidden";
         document.getElementById("carousel").getElementsByTagName("li")[id].style.visibility = "visible";
+        document.getElementById("carousel").getElementsByTagName("li")[id].style.opacity = "1";
 
         id++;
     }
@@ -383,13 +390,17 @@ function turnRight() {
 function turnLeft() {
     if (id <= 1) {
         id = length;
+        document.getElementById("carousel").getElementsByTagName("li")[0].style.opacity = "0";
         document.getElementById("carousel").getElementsByTagName("li")[0].style.visibility = "hidden";
         document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.visibility = "visible";
+        document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.opacity = "1";
     }
 
     else {
+        document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.opacity = "0";
         document.getElementById("carousel").getElementsByTagName("li")[id - 1].style.visibility = "hidden";
         document.getElementById("carousel").getElementsByTagName("li")[id - 2].style.visibility = "visible";
+        document.getElementById("carousel").getElementsByTagName("li")[id - 2].style.opacity = "1";
 
         id--;
     }

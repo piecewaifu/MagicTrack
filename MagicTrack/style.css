@@ -387,6 +387,10 @@ header {
         font-family: MagicFontRegular;
     }
 
+    .pieces li p.dead-loop {
+        color: rgb(246, 92, 92);
+    }
+
 .discount p {
     margin: 0;
     font-family: MagicFontRegular;
@@ -427,6 +431,8 @@ header {
     #carousel li {
         position: absolute;
         visibility: hidden;
+        opacity: 0;
+        transition: ease-in-out all 1s;
         list-style-type: none;
         display: flex;
         flex-direction: row;
@@ -564,7 +570,7 @@ header {
 #zoomed-content {
     width: 1000px;
     height: 600px;
-    background-color: white;
+    background-color: transparent;
     position: relative;
     background-position: center;
     background-size: contain;
@@ -634,11 +640,9 @@ header {
         width: 190px;
         height: 85px;
         background-position: center;
-        /*background-size: contain;*/
         background-size: cover;
         background-repeat: no-repeat;
         background-color: rgb(245,245,245);
-        /*transform: scale(1.2);*/
     }
 
         #gallery > li > img {
@@ -960,6 +964,34 @@ input::placeholder, textarea::placeholder {
     font-size: 16px;
 }
 
+
+.shell {
+    position: relative;
+    line-height: 1;
+}
+.shell span {
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    color: red;
+    pointer-events: none;
+    z-index: -1;
+}
+    .shell i { /* any of these 3 will work */
+        color: transparent;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+
+input.masked,
+.shell span {
+  font-size: 16px;
+  font-family: monospace;
+  padding-right: 10px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
 
 @media screen and (max-width: 900px) {
     header div {
