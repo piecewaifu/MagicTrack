@@ -1118,4 +1118,16 @@ input::placeholder, textarea::placeholder {
         border-radius: 0;
         border-bottom: 1px solid rgb(60, 221, 29);
     }
+    
+    #privacy-policy {
+        overflow-y: scroll;
+    }
+
+    #privacy-policy p {
+        padding-top: 50px;
+        height: 120%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
 }
