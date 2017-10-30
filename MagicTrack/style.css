@@ -1062,6 +1062,16 @@ input::placeholder, textarea::placeholder {
             display: none;
         }
 
+        header .container p {
+            width: 150%;
+            text-align: center;
+        }
+
+        header .container img {
+            height: 62px;
+            width: 101px;
+        }
+
     .magic-track {
         height: 800px;
         flex-direction: column;
@@ -1070,11 +1080,12 @@ input::placeholder, textarea::placeholder {
     }
 
         .magic-track .describe {
-            width: 100%;
+            width: 95%;
         }
 
         .magic-track iframe {
             width: 100%;
+            margin-top: 55px;
         }
 
     .track-features {
@@ -1097,7 +1108,7 @@ input::placeholder, textarea::placeholder {
     }
 
     .track-features .container .features {
-        width: 100%;
+        width: 95%;
         padding: 0;
     }
 
@@ -1111,6 +1122,10 @@ input::placeholder, textarea::placeholder {
 
     .choose-track {
         height: 5700px;
+    }
+
+    .choose-track p, .choose-track h1 {
+        width: 95%;
     }
 
         .choose-track .items {
@@ -1161,7 +1176,7 @@ input::placeholder, textarea::placeholder {
         }
 
             #carousel li .review {
-                width: 100%;
+                width: 95%;
             }
 
                 #carousel li .review p {
@@ -1219,4 +1234,13 @@ input::placeholder, textarea::placeholder {
             display: flex;
             align-items: center;
         }
+
+    footer form {
+        display: none;
+    }
+
+    #callback img, #orderForm img, #reviewForm img, footer form img {
+        width: 24px;
+        height: 24px;
+    }
 }
