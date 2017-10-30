@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="script.js"></script>
     <!--<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">-->
-    <title>i will kms</title>
+    <title>Купить MAGIC TRACK Гоночные трассы</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous">
@@ -18,6 +18,10 @@
 <body>
     <div id="message">
         <p>Ещё один набоp "MAGIC TRACK" был куплен!</p>
+    </div>
+
+    <div id="alert">
+        <p>Сообщение было отправлено!</p>
     </div>
 
     <div id="privacy-policy">
@@ -34,19 +38,19 @@
 
             Ваши личные сведения могут быть разглашены нами только в том случае это необходимо для:
 
-             (а) обеспечения соответствия предписаниям закона или требованиям судебного процесса в нашем отношении ;
+            (а) обеспечения соответствия предписаниям закона или требованиям судебного процесса в нашем отношении ;
 
-             (б) защиты наших прав или собственности (в) принятия срочных мер по обеспечению личной безопасности наших сотрудников или потребителей предоставляемых им услуг,
+            (б) защиты наших прав или собственности (в) принятия срочных мер по обеспечению личной безопасности наших сотрудников или потребителей предоставляемых им услуг,
 
-             а также обеспечению общественной безопасности. Личные сведения, полученные в наше распоряжение при регистрации, 
+            а также обеспечению общественной безопасности. Личные сведения, полученные в наше распоряжение при регистрации,
 
             могут передаваться третьим организациям и лицам, состоящим с нами в партнерских отношениях для улучшения качества оказываемых услуг.
 
-             Эти сведения не будут использоваться в каких-либо иных целях, кроме перечисленных выше. Адрес электронной почты,
+            Эти сведения не будут использоваться в каких-либо иных целях, кроме перечисленных выше. Адрес электронной почты,
 
-             предоставленный вами при регистрации может использоваться для отправки вам сообщений или уведомлений об изменениях,
+            предоставленный вами при регистрации может использоваться для отправки вам сообщений или уведомлений об изменениях,
 
-             связанных с вашей заявкой, а также рассылки сообщений о происходящих в компании событиях и изменениях, важной информации.
+            связанных с вашей заявкой, а также рассылки сообщений о происходящих в компании событиях и изменениях, важной информации.
         </p>
     </div>
 
@@ -59,16 +63,15 @@
                 <div class="input-container">
                     <p>
                         <img src="img/form_face.png" alt="face" />
-                        <input id="callbackName" type="text" placeholder="Введите ваше имя" 
-                               data-min-length="2" data-max-length="15"
-                                />
+                        <input id="callbackName" type="text" placeholder="Введите ваше имя"
+                               data-min-length="2" data-max-length="15" />
                     </p>
                     <p>
                         <img src="img/form_phone.png" alt="face" />
                         <input id="callbackPhone" type="text" name="phone" placeholder="+7(XXX) XXX-XXXX" />
                     </p>
                 </div>
-                <a id="send-callback" class="button" href="#">отправить</a>
+                <div id="send-callback" class="button">отправить</div>
             </form>
         </div>
     </div>
@@ -85,7 +88,7 @@
                 </p>
                 <p>
                     <img src="img/form_phone.png" alt="face" />
-                    <input id="reviewerCity" type="text" placeholder="ваш город"/>
+                    <input id="reviewerCity" type="text" placeholder="ваш город" />
                 </p>
                 <p>
                     <img src="img/review.png" alt="face" />
@@ -93,7 +96,7 @@
                 </p>
             </form>
 
-            <a id="send-review" class="button" href="#" onclick="leaveReview()">отправить</a>
+            <div id="send-review" class="button" onclick="leaveReview()">отправить</div>
         </div>
     </div>
 
@@ -104,9 +107,8 @@
             <form>
                 <p>
                     <img src="img/form_face.png" alt="face" />
-                    <input id="customerName" type="text" placeholder="Введите ваше имя" 
-                           data-min-length="2" data-max-length="15"
-                            />
+                    <input id="customerName" type="text" placeholder="Введите ваше имя"
+                           data-min-length="2" data-max-length="15" />
                 </p>
                 <p>
                     <img src="img/form_phone.png" alt="face" />
@@ -136,7 +138,7 @@
                     </div>
                 </div>
             </form>
-            <a id="send-order" class="button" onclick="sendOrder(event)" href="">отправить</a>
+            <div id="send-order" class="button" onclick="sendOrder(event)" href="">отправить</div>
         </div>
     </div>
 
@@ -150,13 +152,16 @@
     </div>
 
     <header>
-        <div>
+        <div class="container">
             <img src="img/logo.png" alt="logo" height="62" width="101" />
             <h1>Гоночные трассы MAGIC TRACK с <br />доставкой по Москве</h1>
             <p>+7(499)490-13-88</p>
             <!--тепер onclick додається викликом attachClickHandler-->
-            <a id="show-callback-form" class="button" href="#">обратный звонок</a>
+            <div id="show-callback-form" class="button">обратный звонок</div>
         </div>
+
+        <h2>Гоночная трасса <span>MAGIC<br /> TRACK</span> ХИТ 2017 года</h2>
+        <h3>Дорогие друзья, хотите подарить ребенку не забываемую радость, вы по адресу. Чудо трасса, позволит принести вам <br />смех и веселье в ваш дом!</h3>
     </header>
 
     <div id="video-container" class="magic-track">
@@ -219,7 +224,7 @@
                     <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Gonka2.png" alt="item photo" />
@@ -241,7 +246,7 @@
                     <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
@@ -259,7 +264,7 @@
                     <li><p><span>2</span> РАЗВИЛКИ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
@@ -281,7 +286,7 @@
                     <li><p><span>4</span> РАЗВИЛКИ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
         </ul>
         <ul class="items">
@@ -301,7 +306,7 @@
                     <li><p><span></span>ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Bolid2.png" alt="item photo" />
@@ -323,13 +328,13 @@
                     <li><p><span></span>ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
                 <h3>ДРИФТ</h3>
                 <div class="price">
-                    <h1>1 790 <span>руб.</span></h1>
+                    <h1>2 790 <span>руб.</span></h1>
                 </div>
 
                 <ul class="pieces">
@@ -341,7 +346,7 @@
                     <li><p><span></span> ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <a class="button"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item discount-mark">
                 <img class="item-photo" src="MainPic/Drift2.png" alt="item photo" />
@@ -363,7 +368,7 @@
                     <li><p><span></span> ХИТ ПРОДАЖ</p></li>
                 </ul>
 
-                <a class="button" href="#"><img src="img/shopping_cart.png" /> заказать</a>
+                <div class="button" href="#"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
         </ul>
 
@@ -389,7 +394,7 @@
                 </li>
             </ul>
 
-            <iframe width="608" height="290" src="https://www.youtube.com/embed/kww4RDWnyLk"></iframe>
+            <iframe width="608" height="290" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>
         </div>
     </div>
 
@@ -428,7 +433,7 @@
             </li>
         </ul>
 
-        <a class="button" onclick="showReviewForm()">оставить отзыв</a>
+        <div class="button" onclick="showReviewForm()">оставить отзыв</div>
 
         <div id="next" onclick="turnRight()"></div>
         <div id="prev" onclick="turnLeft()"></div>
@@ -461,14 +466,32 @@
     </div>
 
     <footer>
-        <div class="privacy-policy">
-            <a href="#" onclick="showPivacyPolicy()">Политика конфиденциальности</a>
-            <ul class="contacts">
-                <li><a target="_blank" class="vk" href="#"></a></li>
-                <li><a target="_blank" class="facebook" href="https://vk.com/vsedorogu"></a></li>
-                <li><a target="_blank" class="insta" href="https://www.instagram.com/magictracks.shop/"></a></li>
-            </ul>
-        </div>
+        <a href="#" onclick="showPivacyPolicy()">Политика конфиденциальности</a>
+
+        <form id="orderFormFooter">
+            <p>
+                <img src="img/form_face.png" alt="face" />
+                <input id="customerName2" type="text" placeholder="Введите ваше имя"
+                       data-min-length="2" data-max-length="15" />
+            </p>
+            <p>
+                <img src="img/form_phone.png" alt="face" />
+                <input id="customerPhone2" type="text" placeholder="+7(XXX) XXX-XXXX" />
+            </p>
+            <select id="goodsFooter">
+                <option value="" disabled selected>Выберете свой набор</option>
+                <option data-price="1 790" value="ГОНКА">ГОНКА</option>
+                <option data-price="2 990" value="ГОНКА - 2">ГОНКА - 2</option>
+                <option data-price="2 190" value="ВИРАЖ">ВИРАЖ</option>
+                <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                <option data-price="2 490" value="БОЛИД">БОЛИД</option>
+                <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
+                <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
+                <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
+            </select>
+
+            <div class="button" onclick="sendOrderFooter()">заказать</div>
+        </form>
     </footer>
 
 </body>

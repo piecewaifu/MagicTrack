@@ -83,8 +83,8 @@
 }
 
     #privacy-policy p {
-        width: 1300px;
-        height: 800px;
+        width: 630px;
+        height: 400px;
         background: white;
         padding: 20px 20px 0 20px;
         position: relative;
@@ -95,9 +95,33 @@ header {
     height: 580px;
     background: url(img/bg.jpg) no-repeat;
     background-size: cover;
+    position: relative;
 }
 
-    header div {
+    header h2 {
+        color: white;
+        font-family: MagicFontBold;
+        font-size: 36px;
+        text-align: center;
+        padding-top: 75px;
+    }
+
+        header h2 span {
+            color: yellow;
+        }
+
+    header h3 {
+        color: white;
+        font-family: MagicFontBold;
+        font-size: 25px;
+        width: 540px;
+        position: absolute;
+        bottom: 45px;
+        left: 45px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    header .container {
         height: 80px;
         background: white;
         padding: 0 65px 0 65px;
@@ -107,21 +131,15 @@ header {
         z-index: -2;
     }
 
-        header div h1 {
+        header .container h1 {
             font-size: 24px;
             font-family: MagicFontSemi;
         }
 
-        header div p {
+        header .container p {
             font-size: 30px;
             font-family: MagicFontLight;
         }
-
-        header div button {
-        }
-
-            header div button:before {
-            }
 
 .magic-track {
     height: 319px;
@@ -387,9 +405,9 @@ header {
         font-family: MagicFontRegular;
     }
 
-    .pieces li p.dead-loop {
-        color: rgb(246, 92, 92);
-    }
+        .pieces li p.dead-loop {
+            color: rgb(246, 92, 92);
+        }
 
 .discount p {
     margin: 0;
@@ -672,39 +690,72 @@ header {
     margin: 18px 18px 0 18px;
 }
 
+#alert {
+    position: fixed;
+    width: 250px;
+    height: 70px;
+    background: red;
+    z-index: 7777777777777;
+    font-family: MagicFontRegular;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 0 0;
+    bottom: 0;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease-in-out all .5s;
+}
 
 footer {
     width: 100%;
     height: 550px;
-    background: url(img/bg.jpg) no-repeat;
+    background: url(img/footer_bg.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-.privacy-policy {
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    footer form {
+        width: 460px;
+        height: 300px;
+        background: rgba(245,245,245,0.7);
+        border: 1px solid rgb(148, 148, 148);
+        border-radius: 5px;
+        position: absolute;
+        bottom: 55px;
+        right: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer a {
+        position: absolute;
+        color: white;
+        font-family: MagicFontRegular;
+        font-size: 16px;
+        bottom: 25px;
+        left: 25px;
+    }
+
+.privacy-policy a {
+    font-family: MagicFontBold;
+    font-size: 14px;
+    color: black;
 }
 
-    .privacy-policy a {
-        font-family: MagicFontBold;
-        font-size: 14px;
-        color: black;
-    }
-
-    .privacy-policy .contacts {
-        width: 100px;
-        display: flex;
-        justify-content: space-around;
-        margin-left: 50px;
-    }
+.privacy-policy .contacts {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 50px;
+}
 
 .contacts li a {
     text-decoration: none;
@@ -753,11 +804,11 @@ footer {
     cursor: pointer;
 }
 
-#callback p, #orderForm p, #reviewForm p {
+#callback p, #orderForm p, #reviewForm p, footer form p {
     position: relative;
 }
 
-#callback input, #orderForm input, #reviewForm input {
+#callback input, #orderForm input, #reviewForm input, footer form input {
     width: 335px;
     padding-left: 50px;
     height: 45px;
@@ -775,7 +826,7 @@ footer {
     box-shadow: 0px 0px 16px -1px rgba(0,0,0,0.5);
 }
 
-#callback img, #orderForm img, #reviewForm img {
+#callback img, #orderForm img, #reviewForm img, footer form img {
     position: absolute;
     top: 50%;
     left: 15px;
@@ -824,7 +875,7 @@ footer {
     display: none;
 }
 
-    #orderForm select {
+    #orderForm select, footer form select {
         width: 386px;
         height: 45px;
         border: 1px solid black;
@@ -969,14 +1020,16 @@ input::placeholder, textarea::placeholder {
     position: relative;
     line-height: 1;
 }
-.shell span {
-    position: absolute;
-    left: 3px;
-    top: 1px;
-    color: red;
-    pointer-events: none;
-    z-index: -1;
-}
+
+    .shell span {
+        position: absolute;
+        left: 3px;
+        top: 1px;
+        color: red;
+        pointer-events: none;
+        z-index: -1;
+    }
+
     .shell i { /* any of these 3 will work */
         color: transparent;
         opacity: 0;
@@ -984,17 +1037,17 @@ input::placeholder, textarea::placeholder {
     }
 
 
-input.masked,
-.shell span {
-  font-size: 16px;
-  font-family: monospace;
-  padding-right: 10px;
-  background-color: transparent;
-  text-transform: uppercase;
-}
+    input.masked,
+    .shell span {
+        font-size: 16px;
+        font-family: monospace;
+        padding-right: 10px;
+        background-color: transparent;
+        text-transform: uppercase;
+    }
 
 @media screen and (max-width: 900px) {
-    header div {
+    header .container {
         flex-direction: column;
         height: 300px;
         justify-content: space-around;
@@ -1004,6 +1057,10 @@ input.masked,
         background-image: none;
         height: 300px;
     }
+
+        header h2, header h3 {
+            display: none;
+        }
 
     .magic-track {
         height: 800px;
@@ -1087,7 +1144,7 @@ input.masked,
         justify-content: space-around;
         width: 100%;
     }
-        
+
         .reviews h1 {
             text-align: center;
         }
@@ -1097,19 +1154,19 @@ input.masked,
         height: 300px;
     }
 
-    #carousel li {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
+        #carousel li {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    #carousel li .review {
-        width: 100%;
-    }
+            #carousel li .review {
+                width: 100%;
+            }
 
-    #carousel li .review p {
-        width: 100%;
-    }
+                #carousel li .review p {
+                    width: 100%;
+                }
 
     #next {
         right: 10px;
@@ -1125,21 +1182,21 @@ input.masked,
         height: 900px;
     }
 
-    .order ul {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-    }
+        .order ul {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
 
     footer {
         height: 50px;
         background-image: none;
     }
 
-    footer .privacy-policy {
-        justify-content: space-around;
-    }
+        footer .privacy-policy {
+            justify-content: space-around;
+        }
 
     #message {
         top: 0;
@@ -1150,16 +1207,16 @@ input.masked,
         border-radius: 0;
         border-bottom: 1px solid rgb(60, 221, 29);
     }
-    
+
     #privacy-policy {
         overflow-y: scroll;
     }
 
-    #privacy-policy p {
-        padding-top: 50px;
-        height: 120%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
+        #privacy-policy p {
+            padding-top: 50px;
+            height: 120%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
 }

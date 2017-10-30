@@ -8,6 +8,7 @@ var callbackForm;
 window.onload = function () {
     $("#callbackPhone").mask("+7(999) 999-9999");
     $("#customerPhone").mask("+7(999) 999-9999");
+    $("#customerPhone2").mask("+7(999) 999-9999");
 
     attachClickHandler("show-callback-form", showCallbackForm);
     attachClickHandler("close-callback-form", hideCallbackForm);
@@ -122,7 +123,9 @@ function leaveReview() {
         "reviewerMessage": reviewerMessage
     });
 
-    alert("Сообщение было отправлено!");
+
+    showAlert();
+    setTimeout(hideAlert, 2000);
     hideReviewFrom();
 }
 
@@ -151,8 +154,31 @@ function sendOrder() {
     });
 
 
-    alert("Сообщение было отправлено!");
+    showAlert();
+    setTimeout(hideAlert, 2000);
     hideOrderForm();
+}
+
+function sendOrderFooter() {
+    var selected = document.getElementById("goodsFooter").selectedOptions[0];
+    var customerName = getValidImputValue("customerName2");
+    var customerPhone = getValidImputValue("customerPhone2");
+    var trackName = selected.value;
+    var priceString = selected.dataset.price;
+    var price = parseInt(priceString.replace(" ", ""))
+    var amount = (1 * price / 1000).toFixed(3).replace(".", " ") + " руб.";
+
+    var result = emailjs.send("gmail", "order", {
+        "customerName": customerName,
+        "customerPhone": customerPhone,
+        "trackName": trackName,
+        "price": price + " руб.",
+        "quantity": 1 + "шт.",
+        "amount": amount
+    });
+
+    showAlert();
+    setTimeout(hideAlert, 2000);
 }
 
 function showOrderForm(event) {
@@ -287,7 +313,8 @@ function sendCallback() {
     var result = emailjs.send("gmail", "callback", { "name": callbackForm.getElementsByTagName("input")[0].value, "phone": callbackForm.getElementsByTagName("input")[1].value });
     console.log("Email send result = " + result);
 
-    alert("Сообщение было отправлено!");
+    showAlert();
+    setTimeout(hideAlert, 2000);
     hide('callback');
 }
 
@@ -352,6 +379,20 @@ function random() {
     else {
         return;
     }
+}
+
+function showAlert() {
+    var alert = document.getElementById("alert");
+    alert.style.visibility = "visible";
+    alert.style.opacity = "1";
+
+    setTimeout(hideMessage, 2000);
+}
+
+function hideAlert() {
+    var alert = document.getElementById("alert");
+    alert.style.visibility = "invisible";
+    alert.style.opacity = "0";
 }
 
 function showMessage() {
