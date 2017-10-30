@@ -33,7 +33,7 @@ window.onload = function () {
 
     callbackForm = document.getElementById("callback");
 
-    setInterval(random, 1000);
+    setInterval(random, 5000);
 
 
     var ul = document.getElementById('gallery'); // Parent
@@ -125,7 +125,7 @@ function leaveReview() {
 
 
     showAlert();
-    setTimeout(hideAlert, 2000);
+    setTimeout(hideAlert, 7000);
     hideReviewFrom();
 }
 
@@ -139,6 +139,7 @@ function sendOrder() {
     var amount = (quantity * price / 1000).toFixed(3).replace(".", " ") + " руб.";
     var customerName = getValidImputValue("customerName");
     var customerPhone = getValidImputValue("customerPhone");
+    var customerAddress = document.getElementById("customerAddress").value;
 
     if (!customerName || !customerPhone) {
         return;
@@ -147,6 +148,7 @@ function sendOrder() {
     var result = emailjs.send("gmail", "order", {
         "customerName": customerName,
         "customerPhone": customerPhone,
+        "customerAddress": customerAddress,
         "trackName": trackName,
         "price": price + " руб.",
         "quantity": quantity + "шт.",
@@ -155,7 +157,7 @@ function sendOrder() {
 
 
     showAlert();
-    setTimeout(hideAlert, 2000);
+    setTimeout(hideAlert, 7000);
     hideOrderForm();
 }
 
@@ -178,7 +180,7 @@ function sendOrderFooter() {
     });
 
     showAlert();
-    setTimeout(hideAlert, 2000);
+    setTimeout(hideAlert, 7000);
 }
 
 function showOrderForm(event) {
@@ -314,7 +316,7 @@ function sendCallback() {
     console.log("Email send result = " + result);
 
     showAlert();
-    setTimeout(hideAlert, 2000);
+    setTimeout(hideAlert, 7000);
     hide('callback');
 }
 
@@ -385,8 +387,6 @@ function showAlert() {
     var alert = document.getElementById("alert");
     alert.style.visibility = "visible";
     alert.style.opacity = "1";
-
-    setTimeout(hideMessage, 2000);
 }
 
 function hideAlert() {
