@@ -35,6 +35,10 @@
     src: url(MagicFont/SF-UI-Display-Black.ttf);
 }
 
+#timerSmall {
+    display: none;
+}
+
 .alert {
     position: absolute;
     top: -50px;
@@ -1120,13 +1124,25 @@ input::placeholder, textarea::placeholder {
 @media screen and (max-width: 900px) {
     header .container {
         flex-direction: column;
-        height: 300px;
+        height: 500px;
         justify-content: space-around;
+        position: relative;
+    }
+
+        #timerSmall {
+        font-size: 16px;
+        text-align: center;
+        display: block;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -55px;
     }
 
     header {
         background-image: none;
-        height: 300px;
+        height: 500px;
+        position: relative;
     }
 
         header h2, header h3 {
@@ -1369,4 +1385,13 @@ input::placeholder, textarea::placeholder {
     #reviewForm #reviewerMessage {
         width: 100%;
     }
+
+    #timerBig {
+        display: none;
+    }
+
+
+
+
+
 }
