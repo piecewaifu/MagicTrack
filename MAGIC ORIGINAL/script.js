@@ -108,6 +108,17 @@ function hidePivacyPolicy() {
     hide("privacy-policy");
 }
 
+function lookForSize() {
+    var timer = document.getElementById("timer");
+
+    if (window.innerWidth < 900) {
+        document.write('<h4 id="mobileTimer"><script src="http://megatimer.ru/s/330203b996cb1bee68ba985ca791eebb.js"></script></h4>');
+        //var timer = document.getElementById("timer");
+        //timer.innerHTML = "";
+        //timer.innerHTML = '<script src="http://megatimer.ru/s/330203b996cb1bee68ba985ca791eebb.js"></script>';
+    }
+}
+
 function leaveReview() {
     var reviewerName = getValidImputValue("reviewerName");
     var reviewerCity = getValidImputValue("reviewerCity");
@@ -316,7 +327,7 @@ function sendCallback() {
     console.log("Email send result = " + result);
 
     showAlert();
-    setTimeout(hideAlert, 7000);
+    setTimeout(hideAlert, 5000);
     hide('callback');
 }
 
@@ -334,7 +345,7 @@ function startVideoLoading() {
         var iframe = document.createElement("iframe");
         iframe.width = 470;
         iframe.height = 250;
-        iframe.src = "https://www.youtube.com/embed/kww4RDWnyLk";
+        iframe.src = "https://www.youtube.com/embed/lnErU8nwQm4";
 
         container.appendChild(iframe);
     }, 11);
