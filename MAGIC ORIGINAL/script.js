@@ -5,6 +5,13 @@ var galleryLength;
 var zoomedImg;
 var callbackForm;
 
+
+var slides;
+var slides1;
+var currentSlide;
+var slideInterval;
+
+
 window.onload = function () {
     $("#callbackPhone").mask("+7(999) 999-9999");
     $("#customerPhone").mask("+7(999) 999-9999");
@@ -66,6 +73,21 @@ window.onload = function () {
     }
 
     startVideoLoading();
+
+    slides = document.querySelectorAll('#slides .slide');
+    //slides1 = document.querySelectorAll('#slides1 .slide');
+    currentSlide = 0;
+    slideInterval = setInterval(nextSlide, 4000);
+}
+
+function nextSlide() {
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].className = 'slide showing';
+
+    //slides1[currentSlide].className = 'slide';
+    //currentSlide = (currentSlide + 1) % slides1.length;
+    //slides1[currentSlide].className = 'slide showing';
 }
 
 function getValidImputValue(id) {

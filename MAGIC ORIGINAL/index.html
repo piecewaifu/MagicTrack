@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -18,30 +17,30 @@
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter46447977 = new Ya.Metrika({
-                    id:46447977,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter46447977 = new Ya.Metrika({
+                        id: 46447977,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) { }
+            });
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://d31j93rd8oukbv.cloudfront.net/metrika/watch_ua.js";
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://d31j93rd8oukbv.cloudfront.net/metrika/watch_ua.js";
 
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/46447977" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
@@ -50,41 +49,33 @@
     <div id="message">
         <p>Ещё один набоp "MAGIC TRACK" был куплен!</p>
     </div>
-
     <div id="alert">
         <p>Сообщение было отправлено!</p>
     </div>
-
     <div id="privacy-policy">
         <p>
             <span id="close-privacy-policy" class="close-button" onclick="hidePivacyPolicy()"></span>
-
             Политика конфиденциальности <br /><br />
-
             Защита личных данных: <br />
-
             Для защиты ваших личных данных у нас внедрен ряд средств защиты, которые действуют при введении, передаче или работе с вашими личными данными.<br /><br />
-
             Защита Разглашение личных сведений и передача этих сведений третьим лицам:<br /><br />
-
             Ваши личные сведения могут быть разглашены нами только в том случае это необходимо для:
 
             -- обеспечения соответствия предписаниям закона или требованиям судебного процесса в нашем отношении ;<br />
             -- защиты наших прав или собственности <br />
-			-- принятия срочных мер по обеспечению личной безопасности наших сотрудников или потребителей предоставляемых им услуг,
+            -- принятия срочных мер по обеспечению личной безопасности наших сотрудников или потребителей предоставляемых им услуг,
 
             а также обеспечению общественной безопасности. Личные сведения, полученные в наше распоряжение при регистрации,
 
             могут передаваться третьим организациям и лицам, состоящим с нами в партнерских отношениях для улучшения качества оказываемых услуг.
 
             Эти сведения не будут использоваться в каких-либо иных целях, кроме перечисленных выше.<br />
-			
-			Адрес электронной почты, предоставленный вами при регистрации может использоваться для отправки вам сообщений или уведомлений об изменениях,
+
+            Адрес электронной почты, предоставленный вами при регистрации может использоваться для отправки вам сообщений или уведомлений об изменениях,
 
             связанных с вашей заявкой, а также рассылки сообщений о происходящих в компании событиях и изменениях, важной информации.
         </p>
     </div>
-
     <div id="callback">
         <div class="container">
             <h1 class="alert">Поля должны быть заполнены!</h1>
@@ -102,11 +93,10 @@
                         <input id="callbackPhone" type="text" name="phone" placeholder="+7(XXX) XXX-XXXX" />
                     </p>
                 </div>
-                 <div id="send-callback" class="button" onclick="yaCounter46447977.reachGoal('zakaz_zvonka'); return true;">отправить</div>
+                <div id="send-callback" class="button" onclick="yaCounter46447977.reachGoal('zakaz_zvonka'); return true;">отправить</div>
             </form>
         </div>
     </div>
-
     <div id="reviewForm">
         <div class="container">
             <span id="close-review-form" class="close-button" onclick="hideReviewFrom()"></span>
@@ -126,11 +116,9 @@
                     <textarea id="reviewerMessage" placeholder="оставить отзыв" rows="5" cols="50"></textarea>
                 </p>
             </form>
-
             <div id="send-review" class="button" onclick="leaveReview()">отправить</div>
         </div>
     </div>
-
     <div id="orderForm">
         <div class="container">
             <h1>Оформление заказа</h1>
@@ -159,7 +147,6 @@
                     <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
                     <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
                 </select>
-
                 <div class="total-price">
                     <div id="cart">
                         <img src="img/cart.png" alt="cart" />
@@ -173,10 +160,9 @@
                     </div>
                 </div>
             </form>
-            <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;"  href="">отправить</div>
+            <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">отправить</div>
         </div>
     </div>
-
 
     <div id="zoomed">
         <div id="zoomed-content">
@@ -185,258 +171,219 @@
             <div onclick="prevImage()" id="prevImage"></div>
         </div>
     </div>
-
     <header>
         <div class="container">
             <img src="img/logo.png" alt="logo" height="62" width="101" />
-            <h1>Гоночные трассы MAGIC TRACK с <br />доставкой по Москве</h1>
+            <h1>Гоночные трассы <span>MAGIC TRACK</span></h1>
             <p>+7(499)490-13-88</p>
             <!--тепер onclick додається викликом attachClickHandler-->
             <div id="show-callback-form" class="button">обратный звонок</div>
         </div>
-
-        <h2>Гоночная трасса <span>MAGIC<br /> TRACK</span> ХИТ 2017 года</h2>
-        <h3>АКЦИЯ  <span>БЕСПЛАТНАЯ  ДОСТАВКА</span><br />До завершения осталось<br /><br /></h3>
-		<h4 id="timerBig"><script src="scripts/8ecd2cc45669961a28e87313a6742323.js"></script></h4>
-        <h4 id="timerSmall">
-            До окончания акции осталось:
-            <script src="scripts/330203b996cb1bee68ba985ca791eebb.js"></script>
-        </h4>
     </header>
-
-    <div id="video-container" class="magic-track">
-        <div class="describe">
-            <h1>Волшебная трасса</h1>
-            <p>
-                Готовы ли Вы к настоящей гонке? Представляем вам Волшебную трассу - потрясающий гоночный трек, который принимает любую форму и светится в темноте! Гоночная трасса состоит из 200 деталей четырех разных цветов, которые вы можете сочетать как угодно! У вас есть уникальная возможность создать гибкую трассу-конструктор абсолютно любой формы и менять ее дизайн по вашему настроению. С Magic Tracks можно играть даже в темноте. Благодаря светодиодным фарам машинки гонки превращаются в настояще шоу, наполняя комнату великолепными, сказочными, яркими огнями и создавая незабываемую атмосферу азарта и радости!
-            </p>
-            <h2>смотрите видеоинструкцию <img src="img/arrows.png" alt="arrows" /></h2>
-        </div>
-
-        <!--тепер цей iframe додається викликом startVideoLoading() - щоб не затримувало window.onload -->
-        <!--<iframe width="470" height="250" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>-->
-    </div>
-
-    <div class="track-features">
-        <h1>Особенности Волшебной Трассы</h1>
+    <div class="magic-track">
+        <h1>Оригинальный Magic Tracks: Хит-подарок 2017 года!</h1>
         <div class="container">
-            <img src="img/track.png" alt="track" />
-            <ul class="features">
+            <ul class="describe">
                 <li>
-                    <h1>Гибкая трасса</h1>
+                    <h2>Гибкая трасса</h2>
                     <p>Постройте трассу с любыми поворотами, виражами, холмами и оврагами, тоннелями и мостами. Включайте фантазию!</p>
                 </li>
                 <li>
-                    <h1>Светящийся трек</h1>
-                    <p>Трасса накапливает свет и светится в темноте, что придает игре ещё большего разнообразия.</p>
+                    <h2>2 батарейки ААА</h2>
+                    <p>Всего 2-х батареек ААА хватает на много часов игры, ведь машинка очень экономично расходует энергию.</p>
                 </li>
                 <li>
-                    <h1>Лучший подарок 2017 года</h1>
-                    <p>По отзывам покупателей Magic Tracks - самый лучший и самый запоминающийся подарок, полученный ребёнком в праздник.</p>
+                    <h2>Светящейся трасса</h2>
+                    <p>Постройте трассу с любыми поворотами, виражами, холмами и оврагами, тоннелями и мостами. Включайте фантазию!</p>
                 </li>
                 <li>
-                    <h1>Устройте гонки</h1>
-                    <p>Приобретите несколько наборов и дополнительные машинки, чтобы устроить настоящие соревнования гоночных машин на большой трассе.</p>
+                    <h2>Кнопка вверху</h2>
+                    <p>Постройте трассу с любыми поворотами, виражами, холмами и оврагами, тоннелями и мостами. Включайте фантазию!</p>
                 </li>
             </ul>
+            <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
         </div>
     </div>
-
+    <div class="video">
+        <iframe width="1203" height="517" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>
+        <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать прямо сейчас</div>
+    </div>
     <div class="choose-track">
         <h1>выбери свой <span>magic track</span></h1>
         <p>Наиболее увлекательно и интересно играть с несколькими машинками на большой трассе.</p>
         <p>Для этого возьмите несколько наборов. Это не только весело но и выгодно!</p>
-
         <ul class="items">
             <li class="item">
                 <img class="item-photo" src="MainPic/Gonka.png" alt="item photo" />
-                <h3>ГОНКА</h3>
+
                 <div class="price">
-                    <h1>1 790 <span>руб.</span></h1>
+                    <h1>1 790 <span>р.</span></h1>
+                    <h3>ГОНКА</h3>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>1</span> НАБОР</p></li>
-                    <li><p><span>220</span> ДЕТАЛЕЙ</p></li>
-                    <li><p><span>3,35 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>1</span> МАШИНКА</p></li>
-                    <li><p><span>1</span> НАБОР СТИКЕРОВ-НАКЛЕЕК</p></li>
-                    <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
+                    <li><p>1 НАБОР</p></li>
+                    <li><p>220 ДЕТАЛЕЙ</p></li>
+                    <li><p>3,35 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>1 МАШИНКА</p></li>
+                    <li><p>1 НАБОР СТИКЕРОВ-НАКЛЕЕК</p></li>
+                    <li><p>ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item">
                 <img class="item-photo" src="MainPic/Gonka2.png" alt="item photo" />
-                <h3>ГОНКА - 2</h3>
                 <div class="price">
-                    <h1>2 990 <span>руб.</span></h1>
-                    <div class="discount">
-                        <p>Скидка 590 р.</p>
-                        <h2>3 580 p.</h2>
-                    </div>
+                    <h1>2 990 <span>р.</span></h1>
+                    <h3>ГОНКА - 2</h3>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>2</span> НАБОРА</p></li>
-                    <li><p><span>440</span> ДЕТАЛЕЙ</p></li>
-                    <li><p><span>6,7 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>2</span> МАШИНКА</p></li>
-                    <li><p><span>2</span> НАБОР СТИКЕРОВ-НАКЛЕЕК</p></li>
-                    <li><p><span></span> ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
+                    <li><p>2 НАБОРА</p></li>
+                    <li><p>440 ДЕТАЛЕЙ</p></li>
+                    <li><p>6,7 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>2 МАШИНКА</p></li>
+                    <li><p>2 НАБОР СТИКЕРОВ-НАКЛЕЕК</p></li>
+                    <li><p>ПОДРОБНАЯ ИНСТРУКЦИЯ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
-                <h3>ВИРАЖ</h3>
                 <div class="price">
-                    <h1>2 190 <span>руб.</span></h1>
+                    <h3>ВИРАЖ</h3>
+                    <h1>2 190 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>1</span> НАБОР</p></li>
-                    <li><p><span>176</span> ДЕТАЛЕЙ</p></li>
-                    <li><p class="dead-loop"><span>1</span> МЁРТВАЯ ПЕТЛЯ</p></li>
-                    <li><p><span>2,64 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>1</span> СКОРОСТНАЯ МАШИНКА</p></li>
-                    <li><p><span>2</span> РАЗВИЛКИ</p></li>
+                    <li><p>1 НАБОР</p></li>
+                    <li><p>176 ДЕТАЛЕЙ</p></li>
+                    <li><p>1 МЁРТВАЯ ПЕТЛЯ</p></li>
+                    <li><p>2,64 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>1 СКОРОСТНАЯ МАШИНКА</p></li>
+                    <li><p>2 РАЗВИЛКИ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Virag2.png" alt="item photo" />
-                <h3>ВИРАЖ - 2</h3>
                 <div class="price">
-                    <h1>3 790 <span>руб.</span></h1>
-                    <div class="discount">
-                        <p>Скидка 590 р.</p>
-                        <h2>4 380 p.</h2>
-                    </div>
+                    <h3>ВИРАЖ - 2</h3>
+                    <h1>3 790 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>2</span> НАБОР</p></li>
-                    <li><p><span>352</span> ДЕТАЛИ</p></li>
-                    <li><p class="dead-loop"><span>2</span> МЁРТВЫЕ ПЕТЛИ</p></li>
-                    <li><p><span>5,28 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>2</span> СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p><span>4</span> РАЗВИЛКИ</p></li>
+                    <li><p>2 НАБОР</p></li>
+                    <li><p>352 ДЕТАЛИ</p></li>
+                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p>5,28 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
+                    <li><p>4 РАЗВИЛКИ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
         </ul>
         <ul class="items">
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Bolid.png" alt="item photo" />
-                <h3>БОЛИД</h3>
                 <div class="price">
-                    <h1>2 490 <span>руб.</span></h1>
+                    <h3>БОЛИД</h3>
+                    <h1>2 490 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>1</span> НАБОР</p></li>
-                    <li><p><span>236</span> ДЕТАЛИ</p></li>
-                    <li><p class="dead-loop"><span>2</span> МЁРТВЫЕ ПЕТЛИ</p></li>
-                    <li><p><span>4,60 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>1</span> СКОРОСТНАЯ МАШИНКА</p></li>
-                    <li><p class="top-sells"><span></span>ХИТ ПРОДАЖ</p></li>
+                    <li><p>1 НАБОР</p></li>
+                    <li><p>236 ДЕТАЛИ</p></li>
+                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p>4,60 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>1 СКОРОСТНАЯ МАШИНКА</p></li>
+                    <li><p>ХИТ ПРОДАЖ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Bolid2.png" alt="item photo" />
-                <h3>БОЛИД - 2</h3>
                 <div class="price">
-                    <h1>4 290 <span>руб.</span></h1>
-                    <div class="discount">
-                        <p>Скидка 690 р.</p>
-                        <h2>4 980 p.</h2>
-                    </div>
+                    <h3>БОЛИД - 2</h3>
+                    <h1>4 290 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>2</span> НАБОРА</p></li>
-                    <li><p><span>472</span> ДЕТАЛИ</p></li>
-                    <li><p class="dead-loop"><span>4</span> МЁРТВЫЕ ПЕТЛИ</p></li>
-                    <li><p><span>9,20 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>2</span> СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p class="top-sells"><span></span>ХИТ ПРОДАЖ</p></li>
+                    <li><p>2 НАБОРА</p></li>
+                    <li><p>472 ДЕТАЛИ</p></li>
+                    <li><p>4 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p>9,20 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
+                    <li><p>ХИТ ПРОДАЖ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
-                <h3>ДРИФТ</h3>
                 <div class="price">
-                    <h1>2 790 <span>руб.</span></h1>
+                    <h3>ДРИФТ</h3>
+                    <h1>2 790 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>1</span> НАБОР</p></li>
-                    <li><p><span>366</span> ДЕТАЛЕЙ</p></li>
-                    <li><p class="dead-loop"><span>1</span> МЁРТВАЯ ПЕТЛЯ</p></li>
-                    <li><p><span>5,23 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>2</span> СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p class="top-sells"><span></span> ХИТ ПРОДАЖ</p></li>
+                    <li><p>1 НАБОР</p></li>
+                    <li><p>366 ДЕТАЛЕЙ</p></li>
+                    <li><p>1 МЁРТВАЯ ПЕТЛЯ</p></li>
+                    <li><p>5,23 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
+                    <li><p> ХИТ ПРОДАЖ</p></li>
                 </ul>
-
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
-            <li class="item discount-mark">
+            <li class="item">
                 <img class="item-photo" src="MainPic/Drift2.png" alt="item photo" />
-                <h3>ДРИФТ - 2</h3>
                 <div class="price">
-                    <h1>4 790 <span>руб.</span></h1>
-                    <div class="discount">
-                        <p>Скидка 790 р.</p>
-                        <h2>5 580 p.</h2>
-                    </div>
+                    <h3>ДРИФТ - 2</h3>
+                    <h1>4 790 <span>р.</span></h1>
                 </div>
-
                 <ul class="pieces">
-                    <li><p><span>2</span> НАБОРА</p></li>
-                    <li><p><span>732</span> ДЕТАЛЕЙ</p></li>
-                    <li><p class="dead-loop"><span>2</span> МЁРТВЫЕ ПЕТЛИ</p></li>
-                    <li><p><span>10,46 м</span> ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p><span>4</span> СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p class="top-sells"><span></span> ХИТ ПРОДАЖ</p></li>
+                    <li><p>2 НАБОРА</p></li>
+                    <li><p>732 ДЕТАЛЕЙ</p></li>
+                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p>10,46 м ГОНОЧНОЙ ТРАССЫ</p></li>
+                    <li><p>4 СКОРОСТНЫЕ МАШИНКИ</p></li>
+                    <li><p>ХИТ ПРОДАЖ</p></li>
                 </ul>
-
                 <div class="button" href="#"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
         </ul>
-
-        <div class="horizontal-container">
-            <ul id="gallery">
-                <li id="1" class="first">
-                </li>
-                <li id="2" class="second">
-                </li>
-                <li id="3" class="third">
-                </li>
-                <li id="4">
-                </li>
-                <li id="5" class="fifth">
-                </li>
-                <li id="6">
-                </li>
-                <li id="7" class="seventh">
-                </li>
-                <li id="8" class="eight">
-                </li>
-                <li id="9" class="nine">
-                </li>
-            </ul>
-
-            <iframe width="608" height="290" src="https://www.youtube.com/embed/KkoxJ0z4wRg"></iframe>
-        </div>
     </div>
+    <div class="magic-photos">
+        <h1>ФОТО <span>MAGIC TRACKS</span></h1>
+        <p>Остерегайтесь дешёвых подделок! Покупайте только у тех продавцов в которых вы уверены!</p>
+        <ul id="gallery">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+
 
     <div class="reviews">
         <h1>Отзывы наших клиентов</h1>
@@ -446,7 +393,6 @@
                     <div class="photo"></div>
                     <h6>Nessiiiii, г. Москва</h6>
                 </div>
-
                 <div class="review">
                     <p>Решили купить ребенку трассу для машинок, остановили своё внимание на " Magic tracks ". Дорога очень яркая, все детали светятся ярко в темноте, гоночная машинка смотрится особенно красиво, так как они оснащены яркими светодиодами.</p>
                 </div>
@@ -456,7 +402,6 @@
                     <div class="photo"></div>
                     <h6>Оксана, г. Москва</h6>
                 </div>
-
                 <div class="review">
                     <p>Купила своему ребенку гоночный трек. Легко собирается, даже сам сын справился. Но ребеноку младшего возраста прийдется немного помочь. Достаточно крепко держаться между собой детальки, как показано в рекламе без проблем гнется в разные стороны и можно строить разные подъемы, спуски и импровизировать. </p>
                 </div>
@@ -466,51 +411,59 @@
                     <div class="photo"></div>
                     <h6>Алексей, г. Москва</h6>
                 </div>
-
                 <div class="review">
                     <p>Мы купили сразу два набора, Magic tracks Дрифт и Magic tracks Вираж. Игрушка обалденная, светится мигает, куча вариантов что с ней можно сделать. В общем ребенок доволен не реально. </p>
                 </div>
             </li>
         </ul>
-
-        <div class="button" onclick="showReviewForm()">оставить отзыв</div>
+        <div class="button" onclick="showReviewForm()">оставить отзыв</div>\
 
         <div id="next" onclick="turnRight()"></div>
         <div id="prev" onclick="turnLeft()"></div>
     </div>
-
     <div class="order">
-        <h1>Как заказать?</h1>
-        <ul>
-            <li>
-                <img src="img/face.png" alt="face" />
-                <p>Вы оформляете<br /> заказ на сайте или<br /> звоните нам</p>
-            </li>
-            <li>
-                <img src="img/phone.png" alt="face" />
-                <p>Мы перезваниваем<br /> Вам, уточняем адрес <br />и удобное время <br />доставки</p>
-            </li>
-            <li>
-                <img src="img/box.png" alt="face" />
-                <p>Мы доставляем Вам <br />товар</p>
-            </li>
-            <li>
-                <img src="img/cash.png" alt="face" />
-                <p>Если вам все нравится - осуществляете оплату</p>
-            </li>
-            <li>
-                <img src="img/box.png" alt="face" />
-                <p>Вы становитесь счастливым обладателем незаменимого помощника</p>
-            </li>
-        </ul>
+        <h1>ОПЛАТА ПРИ ПОЛУЧЕНИИ ПОСЛЕ ПРОВЕРКИ</h1>
+        <p>
+            Мы отправляем заказы по всей России в максимально короткие сроки.
+            Все посылки тщательно упакованы и обязательно имеют номер отслеживания, чтобы вы могли отслеживать местонахождение заказа в режиме реального времени.
+            Оплата производится при получении товара на руки.
+        </p>
+        <div class="container">
+            <img src="img/order.jpg" alt="order" />
+            <ul>
+                <li>
+                    <h2>Доставка по г. Москва</h2>
+                    <p>Курьерская доставка на дом (1-2 дня). Самовывоз: 2-й Котляковский переулок, д.1, строение 29, 3-й этаж (метро «Каширское» и «Варшавская») с 10:00 до 21:00.</p>
+                </li>
+                <li>
+                    <h2>Доставка по г. Санкт-Петербург</h2>
+                    <p>Курьерская доставка на дом руб. (1-2 дня). Самовывоз: ул. Барклаевская, д.5 (метро «Московские Ворота») с 10 до 21.00</p>
+                </li>
+                <li>
+                    <h2>Курьерская доставка СДЕК по России</h2>
+                    <p>Доставка до двери. Срок от 2-х дней, оплата при получении.</p>
+                </li>
+                <li>
+                    <h2>Доставка ПОЧТОЙ РОССИИ</h2>
+                    <p>Доставка до вашего почтового отделения. Срок от 2-х дней, оплата при получении.</p>
+                </li>
+            </ul>
+        </div>
+        <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
+    </div>
+
+    <div class="ask-us">
+        <h1>ОСТАЛИСЬ ВОПРОСЫ?</h1>
+        <p>Свяжитесь с нами по телефону 8 800 500 27 14 или отправьте сообщение с помощью формы ниже. 
+        Мы обязательно прочтем его и при необходимости свяжемся с вами.
+         Проверьте пожалуйста правильность ваших контактных данных.</p>
     </div>
 
     <footer>
-        <div class="container">
+        <!--<div class="container">
             <h1>MAGIC TRACK</h1>
             <h2>Волшебный Подарок в преддверие <br />Нового Года!!!</h2>
         </div>
-
         <form id="orderFormFooter">
             <h1>Конструктор "Magic Tracks"</h1>
             <h2>Дети не могут нарадоваться!</h2>
@@ -534,10 +487,16 @@
                 <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
                 <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
             </select>
-
             <div class="button" onclick="sendOrderFooter(); yaCounter46447977.reachGoal('buy'); return true;">заказать</div>
-        </form>
+        </form>-->
+
+        <ul id="slides">
+            <li class="slide showing"></li>
+            <li class="slide"></li>
+            <li class="slide"></li>
+        </ul>
     </footer>
+
 
     <div class="line">
         <a href="#" onclick="showPivacyPolicy()">Политика конфиденциальности</a>
