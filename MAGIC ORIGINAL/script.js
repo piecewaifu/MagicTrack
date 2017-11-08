@@ -7,7 +7,6 @@ var callbackForm;
 
 
 var slides;
-var slides1;
 var currentSlide;
 var slideInterval;
 
@@ -51,15 +50,16 @@ window.onload = function () {
         zoomed.style.display = "none";
     });
 
-    ul.addEventListener('click', function (e) {
+    ul.addEventListener('click', function zoomPhoto (e) {
         var target = e.target; // Clicked element
-        while (target && target.parentNode !== ul) {
-            target = target.parentNode; // If the clicked element isn't a direct child
-            if (!target) { return; } // If element doesn't exist
-        }
+        //while (target && target.parentNode !== ul) {
+        //    target = target.parentNode; // If the clicked element isn't a direct child
+        //    if (!target) { return; } // If element doesn't exist
+        //}
         if (target.tagName === 'LI') {
             photoID = target.id; // Check if the element is a LI
             zoomed.style.display = "flex";
+            zoomed.targetLI = target;
             zoomedImg.style.backgroundImage = "url(gallery/" + photoID + ".jpg)";
         }
     });
@@ -69,7 +69,9 @@ window.onload = function () {
     var gallery = document.getElementById("gallery").getElementsByTagName("li").length;
 
     for (var i = 0; i < gallery; i++) {
-        document.getElementById("gallery").getElementsByTagName("li")[i].style.backgroundImage = "url(gallery/" + (i + 1) + ".jpg)";
+        var li = document.getElementById("gallery").getElementsByTagName("li")[i];
+        li.style.backgroundImage = "url(gallery/" + (i + 1) + ".jpg)";
+        li.id = i + 1;
     }
 
     startVideoLoading();
@@ -80,10 +82,20 @@ window.onload = function () {
 }
 
 function nextSlide() {
-    slides[currentSlide].className = 'slide';
-    slides[currentSlide].className = 'slide';
-    currentSlide = (currentSlide + 1) % (slides.length / 2);
-    slides[currentSlide].className = 'slide showing';
+    for (var i = 0; i < slides.length; i++) {
+        var slide = slides[i];
+        if (!slide.classList.contains('showing')) {
+            continue;
+        }
+
+        slide.classList.remove('showing');
+        var next = slide.nextElementSibling;
+        i++;
+        if (!next) {
+            next = slide.parentElement.firstElementChild;
+        }
+        next.classList.add('showing');
+    }
 }
 
 function getValidImputValue(id) {
@@ -390,23 +402,27 @@ function attachClickHandler(id, handler) {
 }
 
 function nextImage() {
-    Number(photoID);
-
-    if (photoID >= galleryLength) {
-        photoID = 1;
+    var zoomed = document.getElementById('zoomed');
+    var current = zoomed.targetLI;
+    var next = current.nextElementSibling;
+    if (!next) {
+        next = current.parentElement.firstElementChild;
     }
 
-    zoomedImg.style.backgroundImage = "url(gallery/" + photoID++ + ".jpg)";
+    zoomed.targetLI = next;
+    zoomedImg.style.backgroundImage = "url(gallery/" + next.id + ".jpg)";
 }
 
 function prevImage() {
-    Number(photoID);
-
-    if (photoID < 1) {
-        photoID = galleryLength;
+    var zoomed = document.getElementById('zoomed');
+    var current = zoomed.targetLI;
+    var next = current.previousElementSibling;
+    if (!next) {
+        next = current.parentElement.lastElementChild;
     }
 
-    zoomedImg.style.backgroundImage = "url(gallery/" + photoID-- + ".jpg)";
+    zoomed.targetLI = next;
+    zoomedImg.style.backgroundImage = "url(gallery/" + next.id + ".jpg)";
 }
 
 
