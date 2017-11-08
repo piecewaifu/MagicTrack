@@ -119,6 +119,38 @@
             <div id="send-review" class="button" onclick="leaveReview()">отправить</div>
         </div>
     </div>
+
+    <div id="order">
+        <div class="container">
+            <span id="close-callback-form" class="close-button" onclick="hideOrder()"></span>
+            <form>
+                <h1>Конструктор "Magic Tracks"</h1>
+                <p>
+                    <img src="img/form_face.png" alt="face" />
+                    <input id="customerName2" type="text" placeholder="Введите ваше имя"
+                           data-min-length="2" data-max-length="15" />
+                </p>
+                <p>
+                    <img src="img/form_phone.png" alt="face" />
+                    <input id="customerPhone2" type="text" placeholder="+7(XXX) XXX-XXXX" />
+                </p>
+                <select id="goodsFooter">
+                    <option value="" disabled selected>Выберете свой набор</option>
+                    <option data-price="1 790" value="ГОНКА">ГОНКА</option>
+                    <option data-price="2 990" value="ГОНКА - 2">ГОНКА - 2</option>
+                    <option data-price="2 190" value="ВИРАЖ">ВИРАЖ</option>
+                    <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="2 490" value="БОЛИД">БОЛИД</option>
+                    <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
+                    <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
+                    <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
+                </select>
+                <div class="button" onclick="sendOrderFooter(); yaCounter46447977.reachGoal('buy'); return true;">заказать</div>
+            </form>
+        </div>
+    </div>
+
+
     <div id="orderForm">
         <div class="container">
             <h1>Оформление заказа</h1>
@@ -171,14 +203,20 @@
             <div onclick="prevImage()" id="prevImage"></div>
         </div>
     </div>
+
     <header>
         <div class="container">
             <img src="img/logo.png" alt="logo" height="62" width="101" />
             <h1>Гоночные трассы <span>MAGIC TRACK</span></h1>
             <p>+7(499)490-13-88</p>
-            <!--тепер onclick додається викликом attachClickHandler-->
             <div id="show-callback-form" class="button">обратный звонок</div>
         </div>
+
+        <ul class="slides">
+            <li class="slide showing"></li>
+            <li class="slide"></li>
+            <li class="slide"></li>
+        </ul>
     </header>
     <div class="magic-track">
         <h1>Оригинальный Magic Tracks: Хит-подарок 2017 года!</h1>
@@ -201,12 +239,12 @@
                     <p>Постройте трассу с любыми поворотами, виражами, холмами и оврагами, тоннелями и мостами. Включайте фантазию!</p>
                 </li>
             </ul>
-            <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
+            <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
         </div>
     </div>
     <div class="video">
         <iframe width="1203" height="517" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>
-        <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать прямо сейчас</div>
+        <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать прямо сейчас</div>
     </div>
     <div class="choose-track">
         <h1>выбери свой <span>magic track</span></h1>
@@ -271,7 +309,7 @@
                 <ul class="pieces">
                     <li><p>2 НАБОР</p></li>
                     <li><p>352 ДЕТАЛИ</p></li>
-                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p class="dead-loop">2 МЁРТВЫЕ ПЕТЛИ</p></li>
                     <li><p>5,28 м ГОНОЧНОЙ ТРАССЫ</p></li>
                     <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
                     <li><p>4 РАЗВИЛКИ</p></li>
@@ -289,10 +327,10 @@
                 <ul class="pieces">
                     <li><p>1 НАБОР</p></li>
                     <li><p>236 ДЕТАЛИ</p></li>
-                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p class="dead-loop">2 МЁРТВЫЕ ПЕТЛИ</p></li>
                     <li><p>4,60 м ГОНОЧНОЙ ТРАССЫ</p></li>
                     <li><p>1 СКОРОСТНАЯ МАШИНКА</p></li>
-                    <li><p>ХИТ ПРОДАЖ</p></li>
+                    <li><p class="top-sells">ХИТ ПРОДАЖ</p></li>
                 </ul>
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
@@ -305,10 +343,10 @@
                 <ul class="pieces">
                     <li><p>2 НАБОРА</p></li>
                     <li><p>472 ДЕТАЛИ</p></li>
-                    <li><p>4 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p class="dead-loop">4 МЁРТВЫЕ ПЕТЛИ</p></li>
                     <li><p>9,20 м ГОНОЧНОЙ ТРАССЫ</p></li>
                     <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p>ХИТ ПРОДАЖ</p></li>
+                    <li><p class="top-sells">ХИТ ПРОДАЖ</p></li>
                 </ul>
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
@@ -321,10 +359,10 @@
                 <ul class="pieces">
                     <li><p>1 НАБОР</p></li>
                     <li><p>366 ДЕТАЛЕЙ</p></li>
-                    <li><p>1 МЁРТВАЯ ПЕТЛЯ</p></li>
+                    <li><p class="dead-loop">1 МЁРТВАЯ ПЕТЛЯ</p></li>
                     <li><p>5,23 м ГОНОЧНОЙ ТРАССЫ</p></li>
                     <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p> ХИТ ПРОДАЖ</p></li>
+                    <li><p class="top-sells"> ХИТ ПРОДАЖ</p></li>
                 </ul>
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
@@ -337,15 +375,17 @@
                 <ul class="pieces">
                     <li><p>2 НАБОРА</p></li>
                     <li><p>732 ДЕТАЛЕЙ</p></li>
-                    <li><p>2 МЁРТВЫЕ ПЕТЛИ</p></li>
+                    <li><p class="dead-loop">2 МЁРТВЫЕ ПЕТЛИ</p></li>
                     <li><p>10,46 м ГОНОЧНОЙ ТРАССЫ</p></li>
                     <li><p>4 СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p>ХИТ ПРОДАЖ</p></li>
+                    <li><p class="top-sells">ХИТ ПРОДАЖ</p></li>
                 </ul>
                 <div class="button" href="#"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
         </ul>
     </div>
+
+
     <div class="magic-photos">
         <h1>ФОТО <span>MAGIC TRACKS</span></h1>
         <p>Остерегайтесь дешёвых подделок! Покупайте только у тех продавцов в которых вы уверены!</p>
@@ -416,7 +456,7 @@
                 </div>
             </li>
         </ul>
-        <div class="button" onclick="showReviewForm()">оставить отзыв</div>\
+        <div class="button" onclick="showReviewForm()">оставить отзыв</div>
 
         <div id="next" onclick="turnRight()"></div>
         <div id="prev" onclick="turnLeft()"></div>
@@ -449,7 +489,7 @@
                 </li>
             </ul>
         </div>
-        <div id="send-order" class="button" onclick="sendOrder(event); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
+        <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
     </div>
 
     <div class="ask-us">
@@ -490,7 +530,7 @@
             <div class="button" onclick="sendOrderFooter(); yaCounter46447977.reachGoal('buy'); return true;">заказать</div>
         </form>-->
 
-        <ul id="slides">
+        <ul class="slides">
             <li class="slide showing"></li>
             <li class="slide"></li>
             <li class="slide"></li>

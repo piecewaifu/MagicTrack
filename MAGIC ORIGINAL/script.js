@@ -74,20 +74,16 @@ window.onload = function () {
 
     startVideoLoading();
 
-    slides = document.querySelectorAll('#slides .slide');
-    //slides1 = document.querySelectorAll('#slides1 .slide');
+    slides = document.querySelectorAll('.slides .slide');
     currentSlide = 0;
     slideInterval = setInterval(nextSlide, 4000);
 }
 
 function nextSlide() {
     slides[currentSlide].className = 'slide';
-    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].className = 'slide';
+    currentSlide = (currentSlide + 1) % (slides.length / 2);
     slides[currentSlide].className = 'slide showing';
-
-    //slides1[currentSlide].className = 'slide';
-    //currentSlide = (currentSlide + 1) % slides1.length;
-    //slides1[currentSlide].className = 'slide showing';
 }
 
 function getValidImputValue(id) {
@@ -214,6 +210,11 @@ function sendOrderFooter() {
 
     showAlert();
     setTimeout(hideAlert, 7000);
+    hideOrder();
+}
+
+function showOrder() {
+    show('order', 'flex');
 }
 
 function showOrderForm(event) {
@@ -239,6 +240,10 @@ function showOrderForm(event) {
 
 function hideOrderForm() {
     hide('orderForm');
+}
+
+function hideOrder() {
+    hide('order');
 }
 
 function showReviewForm() {
