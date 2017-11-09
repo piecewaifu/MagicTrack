@@ -215,21 +215,34 @@ header {
             margin-bottom: 20px;
             /*margin: 0 75px 25px 0;*/
             /*border: 1px solid red;*/
+            position: relative;
         }
 
-            .magic-track .describe li h2 {
-                font-size: 20px;
-                font-family: MagicFontSemi;
-                color: #103F54;
-                margin-bottom: 5px;
-            }
+    .magic-track .container ul li:before {
+        content: "";
+        height: 24px;
+        width: 24px;
+        background: url(img/bullet.png);
+        position: absolute;
+        display: block;
+        left: -30px;
+        top: -2px;
+    }
 
-            .magic-track .describe li p {
-                color: #605E5E;
-                font-family: MagicFontRegular;
-                font-size: 15px;
-                line-height: 20px;
-            }
+
+    .magic-track .describe li h2 {
+        font-size: 20px;
+        font-family: MagicFontSemi;
+        color: #103F54;
+        margin-bottom: 5px;
+    }
+
+    .magic-track .describe li p {
+        color: #605E5E;
+        font-family: MagicFontRegular;
+        font-size: 15px;
+        line-height: 20px;
+    }
 
 .video {
     width: 1360px;
@@ -330,17 +343,39 @@ header {
                     color: white;
                     display: flex;
                     justify-content: center;
-                    align-items: center;
+                    /*align-items: center;*/
+                    line-height: 82px;
                     position: absolute;
                     top: -50px;
                 }
+
+                    .choose-track .items .item .price h1.one-set:after {
+                        content: "один набор";
+                        color: white;
+                        font-family: MagicFontLight;
+                        font-size: 13px;
+                        text-transform: lowercase;
+                        position: absolute;
+                        top: 20px;
+                    }
+
+
+                    .choose-track .items .item .price h1.two-sets:after {
+                        content: "два набора";
+                        color: white;
+                        font-family: MagicFontLight;
+                        font-size: 13px;
+                        text-transform: lowercase;
+                        position: absolute;
+                        top: 20px;
+                    }
 
                     .choose-track .items .item .price h1 span {
                         color: black;
                         font-size: 15px;
                         color: white;
                         margin-left: 5px;
-                        margin-top: 5px;
+                        margin-top: 2px;
                     }
 
 .discount-mark:before {
@@ -1431,6 +1466,7 @@ input::placeholder, textarea::placeholder {
                 .magic-track .container ul li {
                     margin-bottom: 20px;
                     width: 98%;
+                    position: relative;
                 }
 
     .video {
