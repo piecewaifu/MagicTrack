@@ -80,6 +80,7 @@
         <div class="container">
             <h1 class="alert">Поля должны быть заполнены!</h1>
             <span id="close-callback-form" class="close-button"></span>
+            <h1 class="alert">Поля должны быть заполнены!</h1>
             <form>
                 <h1>Обратный звонок</h1>
                 <div class="input-container">
@@ -101,6 +102,7 @@
         <div class="container">
             <span id="close-review-form" class="close-button" onclick="hideReviewFrom()"></span>
             <h1>Оставить отзыв</h1>
+            <h1 class="alert">Поля должны быть заполнены!</h1>
             <form>
                 <p>
                     <img src="img/form_face.png" alt="face" />
@@ -123,6 +125,7 @@
     <div id="order">
         <div class="container">
             <span id="close-callback-form" class="close-button" onclick="hideOrder()"></span>
+            <h1 class="alert">Поля должны быть заполнены!</h1>
             <form>
                 <h1>Конструктор "Magic Tracks"</h1>
                 <p>
@@ -155,6 +158,7 @@
         <div class="container">
             <h1>Оформление заказа</h1>
             <span id="close-callback-form" class="close-button" onclick="hideOrderForm()"></span>
+            <h1 class="alert">Поля должны быть заполнены!</h1>
             <form>
                 <p>
                     <img src="img/form_face.png" alt="face" />
@@ -212,6 +216,17 @@
             <div id="show-callback-form" class="button">обратный звонок</div>
         </div>
 
+
+        <div class="text-container">
+            <h1>гоночная трасса <span>magic<br /> tracks</span> светится в темноте</h1>
+            <p>
+                А гоночные автомобили Magic Tracks ярко мигают светодиодными фарами!<br />
+                Дорогу для автогонок можно проложить по всей комнате.<br />
+                Машины смогут ехать в "тоннелях" и преодолевать "горы". Делайте любые виражи, изгибы и повороты.<br />
+                Включайте фантазию!
+            </p>
+            <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">оставить заявку</div>
+        </div>
         <ul class="slides">
             <li class="slide showing"></li>
             <li class="slide"></li>
@@ -239,7 +254,6 @@
                     <p>Постройте трассу с любыми поворотами, виражами, холмами и оврагами, тоннелями и мостами. Включайте фантазию!</p>
                 </li>
             </ul>
-            <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать сейчас</div>
         </div>
     </div>
     <div class="video">
@@ -494,9 +508,11 @@
 
     <div class="ask-us">
         <h1>ОСТАЛИСЬ ВОПРОСЫ?</h1>
-        <p>Свяжитесь с нами по телефону 8 800 500 27 14 или отправьте сообщение с помощью формы ниже. 
-        Мы обязательно прочтем его и при необходимости свяжемся с вами.
-         Проверьте пожалуйста правильность ваших контактных данных.</p>
+        <p>
+            Свяжитесь с нами по телефону 8 800 500 27 14 или отправьте сообщение с помощью формы ниже.
+            Мы обязательно прочтем его и при необходимости свяжемся с вами.
+            Проверьте пожалуйста правильность ваших контактных данных.
+        </p>
     </div>
 
     <footer>
@@ -529,6 +545,17 @@
             </select>
             <div class="button" onclick="sendOrderFooter(); yaCounter46447977.reachGoal('buy'); return true;">заказать</div>
         </form>-->
+
+        <div class="text-container">
+            <h1>гоночная трасса <span>magic<br /> tracks</span> светится в темноте</h1>
+            <p>
+                А гоночные автомобили Magic Tracks ярко мигают светодиодными фарами!<br />
+                Дорогу для автогонок можно проложить по всей комнате.<br />
+                Машины смогут ехать в "тоннелях" и преодолевать "горы". Делайте любые виражи, изгибы и повороты.<br />
+                Включайте фантазию!
+            </p>
+            <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">оставить заявку</div>
+        </div>
 
         <ul class="slides">
             <li class="slide showing"></li>

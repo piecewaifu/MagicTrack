@@ -177,6 +177,32 @@ header {
             font-weight: 600;
         }
 
+.text-container {
+    position: absolute;
+    top: 220px;
+    left: 215px;
+}
+
+    .text-container h1 {
+        font-family: MagicFontHeavy;
+        font-size: 40px;
+        color: white;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+    }
+
+    .text-container p {
+        color: white;
+        font-family: MagicFontLight;
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 20px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+    }
+
 .magic-track {
     width: 1360px;
     height: 275px;
@@ -196,7 +222,7 @@ header {
         width: 100%;
         height: 150px;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
     }
 
@@ -206,7 +232,6 @@ header {
         width: 965px;
         height: 150px;
         justify-content: space-between;
-        margin-right:;
     }
 
         .magic-track .describe li {
@@ -312,7 +337,6 @@ header {
             }
 
             .choose-track .items .item .item-photo {
-                height: 25%;
                 width: 75%;
                 margin-bottom: 40px;
             }
@@ -861,6 +885,7 @@ header .slides {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
+    z-index: -1;
 }
 
 .slide {
@@ -1014,6 +1039,10 @@ footer {
     background-size: cover;
     background-position: center;
     position: relative;
+}
+
+footer .text-container {
+    top: 120px;
 }
 
 .line {

@@ -158,6 +158,14 @@ function leaveReview() {
     //    return;
     //}
 
+    if (!reviewerName || !reviewerMessage) {
+        document.getElementsByClassName("alert")[2].style.opacity = "1";
+        setTimeout(function () {
+            document.getElementsByClassName("alert")[2].style.opacity = "0";
+        }, 1500);
+        return;
+    }
+
     var result = emailjs.send("gmail", "review", {
         "reviewerName": reviewerName,
         "reviewerCity": reviewerCity,
@@ -183,6 +191,10 @@ function sendOrder() {
     var customerAddress = document.getElementById("customerAddress").value;
 
     if (!customerName || !customerPhone) {
+        document.getElementsByClassName("alert")[4].style.opacity = "1";
+        setTimeout(function () {
+            document.getElementsByClassName("alert")[4].style.opacity = "0";
+        }, 1500);
         return;
     }
 
@@ -210,6 +222,14 @@ function sendOrderFooter() {
     var priceString = selected.dataset.price;
     var price = parseInt(priceString.replace(" ", ""))
     var amount = (1 * price / 1000).toFixed(3).replace(".", " ") + " руб.";
+
+    if (!customerName || !customerPhone) {
+        document.getElementsByClassName("alert")[3].style.opacity = "1";
+        setTimeout(function () {
+            document.getElementsByClassName("alert")[3].style.opacity = "0";
+        }, 1500);
+        return;
+    }
 
     var result = emailjs.send("gmail", "order", {
         "customerName": customerName,
