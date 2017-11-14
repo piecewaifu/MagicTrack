@@ -159,9 +159,9 @@ function leaveReview() {
     //}
 
     if (!reviewerName || !reviewerMessage) {
-        document.getElementsByClassName("alert")[2].style.opacity = "1";
+        document.getElementsByClassName("alert")[1].style.opacity = "1";
         setTimeout(function () {
-            document.getElementsByClassName("alert")[2].style.opacity = "0";
+            document.getElementsByClassName("alert")[1].style.opacity = "0";
         }, 1500);
         return;
     }
@@ -191,9 +191,9 @@ function sendOrder() {
     var customerAddress = document.getElementById("customerAddress").value;
 
     if (!customerName || !customerPhone) {
-        document.getElementsByClassName("alert")[4].style.opacity = "1";
+        document.getElementsByClassName("alert")[3].style.opacity = "1";
         setTimeout(function () {
-            document.getElementsByClassName("alert")[4].style.opacity = "0";
+            document.getElementsByClassName("alert")[3].style.opacity = "0";
         }, 1500);
         return;
     }
@@ -224,9 +224,9 @@ function sendOrderFooter() {
     var amount = (1 * price / 1000).toFixed(3).replace(".", " ") + " руб.";
 
     if (!customerName || !customerPhone) {
-        document.getElementsByClassName("alert")[3].style.opacity = "1";
+        document.getElementsByClassName("alert")[2].style.opacity = "1";
         setTimeout(function () {
-            document.getElementsByClassName("alert")[3].style.opacity = "0";
+            document.getElementsByClassName("alert")[2].style.opacity = "0";
         }, 1500);
         return;
     }
