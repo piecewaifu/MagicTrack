@@ -219,9 +219,6 @@ function sendOrderFooter() {
     var customerName = getValidImputValue("customerName2");
     var customerPhone = getValidImputValue("customerPhone2");
     var trackName = selected.value;
-    var priceString = selected.dataset.price;
-    var price = parseInt(priceString.replace(" ", ""))
-    var amount = (1 * price / 1000).toFixed(3).replace(".", " ") + " руб.";
 
     if (!customerName || !customerPhone) {
         document.getElementsByClassName("alert")[2].style.opacity = "1";
@@ -230,6 +227,11 @@ function sendOrderFooter() {
         }, 1500);
         return;
     }
+
+    var priceString = selected.dataset.price;
+    var price = parseInt(priceString.replace(" ", ""))
+    var amount = (1 * price / 1000).toFixed(3).replace(".", " ") + " руб.";
+
 
     var result = emailjs.send("gmail", "order", {
         "customerName": customerName,
