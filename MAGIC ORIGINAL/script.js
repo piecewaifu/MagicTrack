@@ -16,6 +16,8 @@ window.onload = function () {
     $("#customerPhone").mask("+7(999) 999-9999");
     $("#customerPhone2").mask("+7(999) 999-9999");
 
+    initialize();
+
     attachClickHandler("show-callback-form", showCallbackForm);
     attachClickHandler("close-callback-form", hideCallbackForm);
     attachClickHandler("send-callback", sendCallback);
