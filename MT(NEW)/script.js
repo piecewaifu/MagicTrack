@@ -27,9 +27,6 @@ window.onload = function () {
         items[i].getElementsByClassName("button")[0].onclick = showOrderForm;
     }
 
-    setTimeout(turnRight, 1);
-    setInterval(turnRight, 10000);
-
     initEmailJs();
 
     var closeBtn = document.getElementById("close");

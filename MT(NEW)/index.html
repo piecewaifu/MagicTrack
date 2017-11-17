@@ -30,8 +30,8 @@
             codeLatLng(lat, lng)
         }
 
-        function errorFunction() {
-            alert("Geocoder failed");
+         function errorFunction() {
+             console.log("Geocoder failed");
         }
 
         function initialize() {
@@ -71,10 +71,10 @@
                         document.getElementById('delivery').innerHTML = "гоночные трассы " + "<span>magic track</span><br />" + "с доставкой в " + city.short_name;
 
                     } else {
-                        alert("No results found");
+                        console.log("No results found");
                     }
                 } else {
-                    alert("Geocoder failed due to: " + status);
+                    console.log("Geocoder failed due to: " + status);
                 }
             });
         }
@@ -121,11 +121,11 @@
     <div id="privacy-policy">
         <p>
             <span id="close-privacy-policy" class="close-button" onclick="hidePivacyPolicy()"></span>
-            Политика конфиденциальности <br /><br />
+            <b>Политика конфиденциальности</b> <br /><br />
             Защита личных данных: <br />
             Для защиты ваших личных данных у нас внедрен ряд средств защиты, которые действуют при введении, передаче или работе с вашими личными данными.<br /><br />
             Защита Разглашение личных сведений и передача этих сведений третьим лицам:<br /><br />
-            Ваши личные сведения могут быть разглашены нами только в том случае это необходимо для:
+            Ваши личные сведения могут быть разглашены нами только в том случае это необходимо для:<br />
 
             -- обеспечения соответствия предписаниям закона или требованиям судебного процесса в нашем отношении ;<br />
             -- защиты наших прав или собственности <br />
@@ -133,7 +133,7 @@
 
             а также обеспечению общественной безопасности. Личные сведения, полученные в наше распоряжение при регистрации,
 
-            могут передаваться третьим организациям и лицам, состоящим с нами в партнерских отношениях для улучшения качества оказываемых услуг.
+            могут передаваться третьим организациям и лицам, состоящим с нами в партнерских отношениях для улучшения качества оказываемых услуг.<br />
 
             Эти сведения не будут использоваться в каких-либо иных целях, кроме перечисленных выше.<br />
 
@@ -204,14 +204,14 @@
                 </p>
                 <select id="goodsFooter">
                     <option value="" disabled selected>Выберете свой набор</option>
-                    <option data-price="1 790" value="ГОНКА">ГОНКА</option>
-                    <option data-price="2 990" value="ГОНКА - 2">ГОНКА - 2</option>
-                    <option data-price="2 190" value="ВИРАЖ">ВИРАЖ</option>
-                    <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
-                    <option data-price="2 490" value="БОЛИД">БОЛИД</option>
-                    <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
-                    <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
-                    <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
+                    <option data-price="1 290" value="ГОНКА">ГОНКА</option>
+                    <option data-price="2 490" value="ГОНКА - 2">ГОНКА - 2</option>
+                    <option data-price="1 990" value="ВИРАЖ">ВИРАЖ</option>
+                    <option data-price="3 490" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="2 190" value="БОЛИД">БОЛИД</option>
+                    <option data-price="3 890" value="БОЛИД - 2">БОЛИД - 2</option>
+                    <option data-price="2 690" value="ДРИФТ">ДРИФТ</option>
+                    <option data-price="4 890" value="ДРИФТ - 2">ДРИФТ - 2</option>
                 </select>
                 <div class="button" onclick="sendOrderFooter(); yaCounter46447977.reachGoal('buy'); return true;">заказать</div>
             </form>
@@ -239,14 +239,14 @@
                     <input id="customerAddress" type="text" placeholder="Ваш адресс" />
                 </p>
                 <select id="goods" onchange="handleTrackSelected(event)">
-                    <option data-price="1 790" value="ГОНКА">ГОНКА</option>
-                    <option data-price="2 990" value="ГОНКА - 2">ГОНКА - 2</option>
-                    <option data-price="2 190" value="ВИРАЖ">ВИРАЖ</option>
-                    <option data-price="3 790" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
-                    <option data-price="2 490" value="БОЛИД">БОЛИД</option>
-                    <option data-price="4 290" value="БОЛИД - 2">БОЛИД - 2</option>
-                    <option data-price="2 790" value="ДРИФТ">ДРИФТ</option>
-                    <option data-price="4 790" value="ДРИФТ - 2">ДРИФТ - 2</option>
+                    <option data-price="1 290" value="ГОНКА">ГОНКА</option>
+                    <option data-price="2 490" value="ГОНКА - 2">ГОНКА - 2</option>
+                    <option data-price="1 990" value="ВИРАЖ">ВИРАЖ</option>
+                    <option data-price="3 490" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="2 190" value="БОЛИД">БОЛИД</option>
+                    <option data-price="3 890" value="БОЛИД - 2">БОЛИД - 2</option>
+                    <option data-price="2 690" value="ДРИФТ">ДРИФТ</option>
+                    <option data-price="4 890" value="ДРИФТ - 2">ДРИФТ - 2</option>
                 </select>
                 <div class="total-price">
                     <div id="cart">
@@ -322,7 +322,7 @@
         </div>
     </div>
     <div class="video">
-        <iframe width="1203" height="517" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>
+        <iframe width="1290" height="517" src="https://www.youtube.com/embed/lnErU8nwQm4"></iframe>
         <div id="send-order" class="button" onclick="showOrder(); yaCounter46447977.reachGoal('buy'); return true;" href="">заказать прямо сейчас</div>
     </div>
     <div class="choose-track">
@@ -334,7 +334,7 @@
                 <img class="item-photo" src="MainPic/Gonka.png" alt="item photo" />
 
                 <div class="price">
-                    <h1 class="one-set">1 790 <span>р.</span></h1>
+                    <h1 class="one-set">1 290 <span>р.</span></h1>
                     <h3>ГОНКА</h3>
                 </div>
                 <ul class="pieces">
@@ -350,7 +350,7 @@
             <li class="item">
                 <img class="item-photo" src="MainPic/Gonka2.png" alt="item photo" />
                 <div class="price">
-                    <h1 class="two-sets">2 990 <span>р.</span></h1>
+                    <h1 class="two-sets">2 490 <span>р.</span></h1>
                     <h3>ГОНКА - 2</h3>
                 </div>
                 <ul class="pieces">
@@ -367,7 +367,7 @@
                 <img class="item-photo" src="MainPic/Virag.jpg" alt="item photo" />
                 <div class="price">
                     <h3>ВИРАЖ</h3>
-                    <h1 class="one-set">2 190 <span>р.</span></h1>
+                    <h1 class="one-set">1 990 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>1 НАБОР</p></li>
@@ -383,7 +383,7 @@
                 <img class="item-photo" src="MainPic/Virag2.png" alt="item photo" />
                 <div class="price">
                     <h3>ВИРАЖ - 2</h3>
-                    <h1 class="two-sets">3 790 <span>р.</span></h1>
+                    <h1 class="two-sets">3 490 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>2 НАБОР</p></li>
@@ -401,7 +401,7 @@
                 <img class="item-photo" src="MainPic/Bolid.png" alt="item photo" />
                 <div class="price">
                     <h3>БОЛИД</h3>
-                    <h1 class="one-set">2 490 <span>р.</span></h1>
+                    <h1 class="one-set">2 190 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>1 НАБОР</p></li>
@@ -417,7 +417,7 @@
                 <img class="item-photo" src="MainPic/Bolid2.png" alt="item photo" />
                 <div class="price">
                     <h3>БОЛИД - 2</h3>
-                    <h1 class="two-sets">4 290 <span>р.</span></h1>
+                    <h1 class="two-sets">3 890 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>2 НАБОРА</p></li>
@@ -433,7 +433,7 @@
                 <img class="item-photo" src="MainPic/Drift.jpg" alt="item photo" />
                 <div class="price">
                     <h3>ДРИФТ</h3>
-                    <h1 class="one-set">2 790 <span>р.</span></h1>
+                    <h1 class="one-set">2 690 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>1 НАБОР</p></li>
@@ -449,7 +449,7 @@
                 <img class="item-photo" src="MainPic/Drift2.png" alt="item photo" />
                 <div class="price">
                     <h3>ДРИФТ - 2</h3>
-                    <h1 class="two-sets">4 790 <span>р.</span></h1>
+                    <h1 class="two-sets">4 890 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
                     <li><p>2 НАБОРА</p></li>
@@ -481,24 +481,6 @@
             <li></li>
             <li></li>
             <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
         </ul>
 
     </div>
@@ -510,7 +492,7 @@
             <li>
                 <div class="person">
                     <div class="photo"></div>
-                    <h6>Nessiiiii, г. Москва</h6>
+                    <h6>Наталия, г. Москва</h6>
                 </div>
                 <div class="review">
                     <p>Решили купить ребенку трассу для машинок, остановили своё внимание на " Magic tracks ". Дорога очень яркая, все детали светятся ярко в темноте, гоночная машинка смотрится особенно красиво, так как они оснащены яркими светодиодами.</p>
@@ -518,7 +500,7 @@
             </li>
             <li>
                 <div class="person">
-                    <div class="photo"></div>
+                    <div class="photo1"></div>
                     <h6>Оксана, г. Москва</h6>
                 </div>
                 <div class="review">
@@ -527,7 +509,7 @@
             </li>
             <li>
                 <div class="person">
-                    <div class="photo"></div>
+                    <div class="photo2"></div>
                     <h6>Алексей, г. Москва</h6>
                 </div>
                 <div class="review">
@@ -552,11 +534,11 @@
             <ul>
                 <li>
                     <h2>Доставка по г. Москва</h2>
-                    <p>Курьерская доставка на дом (1-2 дня). Самовывоз: 2-й Котляковский переулок, д.1, строение 29, 3-й этаж (метро «Каширское» и «Варшавская») с 10:00 до 21:00.</p>
+                    <p>Курьерская доставка на дом (1-2 дня). Самовывоз: ул. Москворечье, 2ж, офис 208 (метро «Каширское» и «Варшавская») с 10:00 до 21:00.</p>
                 </li>
                 <li>
                     <h2>Доставка по г. Санкт-Петербург</h2>
-                    <p>Курьерская доставка на дом руб. (1-2 дня). Самовывоз: ул. Барклаевская, д.5 (метро «Московские Ворота») с 10 до 21.00</p>
+                    <p>Курьерская доставка на дом руб. (1-2 дня). Самовывоз: проспект Юрия Гагарина,  д.2, (метро «Электросила и Парк победы») с 10 до 21.00</p>
                 </li>
                 <li>
                     <h2>Курьерская доставка СДЕК по России</h2>
@@ -574,8 +556,8 @@
     <div class="ask-us">
         <h1>ОСТАЛИСЬ ВОПРОСЫ?</h1>
         <p>
-            Свяжитесь с нами по телефону 8 800 500 27 14 или отправьте сообщение с помощью формы ниже.
-            Мы обязательно прочтем его и при необходимости свяжемся с вами.
+            Свяжитесь с нами по телефону +7 (499) 490-13-88 или отправьте сообщение с помощью формы заказа.
+            Мы обязательно прочтем его и свяжемся с вами.
             Проверьте пожалуйста правильность ваших контактных данных.
         </p>
     </div>

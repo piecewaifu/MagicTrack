@@ -180,8 +180,8 @@ header {
 
 .text-container {
     position: absolute;
-    top: 220px;
-    left: 215px;
+    top: 290px;
+    left: 120px;
 }
 
     .text-container h1 {
@@ -338,7 +338,7 @@ header {
             }
 
             .choose-track .items .item .item-photo {
-                width: 75%;
+				height: 25%;
                 margin-bottom: 40px;
             }
 
@@ -547,6 +547,11 @@ header {
         flex-direction: row;
     }
 
+    #carousel li:first-child {
+        visibility: visible;
+        opacity: 1;
+    }
+
     #carousel .person {
         width: 200px;
         display: flex;
@@ -564,6 +569,25 @@ header {
             height: 120px;
             border-radius: 50%;
             background: url(img/photo.jpg);
+			background-size: 100%;
+            margin-bottom: 15px;
+        }
+		
+		#carousel .person .photo1 {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url(img/photo1.jpg);
+			background-size: 100%;
+            margin-bottom: 15px;
+        }
+		
+		#carousel .person .photo2 {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url(img/photo2.jpg);
+			background-size: 100%;
             margin-bottom: 15px;
         }
 
@@ -824,7 +848,7 @@ header {
 
 .magic-photos {
     width: 1440px;
-    height: 880px;
+    height: 440px;
     /*border: 1px solid red;*/
     display: flex;
     flex-direction: column;
@@ -918,20 +942,28 @@ header .slides {
     box-sizing: border-box;
     background: #333;
     color: #fff;
+    
 }
 
     .slide:nth-of-type(1) {
         background: url(img/1.jpg);
+		background-repeat:no-repeat;
         background-position: center;
+        background-size: cover;    
     }
 
     .slide:nth-of-type(2) {
         background: url(img/2.jpg);
+		background-repeat:no-repeat;
         background-position: center;
+        background-size: cover;
     }
 
     .slide:nth-of-type(3) {
-        background: green;
+        background: url(img/3.jpg);
+		background-repeat:no-repeat;
+		background-position: center;
+        background-size: cover;
     }
 
 @media(max-width: 768px) {
@@ -1712,6 +1744,10 @@ input::placeholder, textarea::placeholder {
     }
 
     #timerBig {
+        display: none;
+    }
+
+    div.text-container {
         display: none;
     }
 }
