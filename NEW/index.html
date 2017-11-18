@@ -13,7 +13,7 @@
     </script>
     <script src="scripts/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script type="text/javascript">
@@ -51,23 +51,12 @@
                         for (var i = 0; i < results[0].address_components.length; i++) {
                             for (var b = 0; b < results[0].address_components[i].types.length; b++) {
 
-                                //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
                                 if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
-                                    //this is the object you are looking for
                                     city = results[0].address_components[i];
                                     break;
                                 }
                             }
                         }
-                        //city data
-                        //alert(city.short_name + " " + city.long_name)
-                        //if (city.short_name = "Москва") {
-                        //    document.getElementById('delivery').innerHTML = "гоночные трассы magic track с доставкой по Москве";
-                        //}
-                        //else if (city.short_name = "Санкт-Петербург") {
-                        //    document.getElementById('delivery').innerHTML = "гоночные трассы magic track с доставкой по г.Санкт-Петербург";
-                        //}
-
                         document.getElementById('delivery').innerHTML = "гоночные трассы " + "<span>magic track</span><br />" + "с доставкой в " + city.short_name;
 
                     } else {
@@ -207,7 +196,7 @@
                     <option data-price="1 290" value="ГОНКА">ГОНКА</option>
                     <option data-price="2 490" value="ГОНКА - 2">ГОНКА - 2</option>
                     <option data-price="1 990" value="ВИРАЖ">ВИРАЖ</option>
-                    <option data-price="3 490" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="490" value="МАШИНКИ">МАШИНКИ</option>
                     <option data-price="2 190" value="БОЛИД">БОЛИД</option>
                     <option data-price="3 890" value="БОЛИД - 2">БОЛИД - 2</option>
                     <option data-price="2 690" value="ДРИФТ">ДРИФТ</option>
@@ -236,13 +225,13 @@
                 </p>
                 <p>
                     <img src="img/box.png" alt="face" />
-                    <input id="customerAddress" type="text" placeholder="Ваш адресс" />
+                    <input id="customerAddress" type="text" placeholder="Ваш адрес" />
                 </p>
                 <select id="goods" onchange="handleTrackSelected(event)">
                     <option data-price="1 290" value="ГОНКА">ГОНКА</option>
                     <option data-price="2 490" value="ГОНКА - 2">ГОНКА - 2</option>
                     <option data-price="1 990" value="ВИРАЖ">ВИРАЖ</option>
-                    <option data-price="3 490" value="ВИРАЖ - 2">ВИРАЖ - 2</option>
+                    <option data-price="490" value="МАШИНКИ">МАШИНКИ</option>
                     <option data-price="2 190" value="БОЛИД">БОЛИД</option>
                     <option data-price="3 890" value="БОЛИД - 2">БОЛИД - 2</option>
                     <option data-price="2 690" value="ДРИФТ">ДРИФТ</option>
@@ -380,18 +369,18 @@
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
             <li class="item">
-                <img class="item-photo" src="MainPic/Virag2.png" alt="item photo" />
+                <img class="item-photo" src="MainPic/car.png" alt="item photo" />
                 <div class="price">
-                    <h3>ВИРАЖ - 2</h3>
-                    <h1 class="two-sets">3 490 <span>р.</span></h1>
+                    <h3>МАШИНКА</h3>
+                    <h1 class="one-setcar">490 <span>р.</span></h1>
                 </div>
                 <ul class="pieces">
-                    <li><p>2 НАБОР</p></li>
-                    <li><p>352 ДЕТАЛИ</p></li>
-                    <li><p class="dead-loop">2 МЁРТВЫЕ ПЕТЛИ</p></li>
-                    <li><p>5,28 м ГОНОЧНОЙ ТРАССЫ</p></li>
-                    <li><p>2 СКОРОСТНЫЕ МАШИНКИ</p></li>
-                    <li><p>4 РАЗВИЛКИ</p></li>
+				<li><p><span>1</span> ГОНОЧНАЯ МАШИНКА</p></li>
+                    <li><p><span>2</span> БАТАРЕЙКИ ААА</p></li>
+                    <li><p><span>2</span> ЦВЕТА НА ВЫБОР:</p></li>
+                    <li><p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span> ЗЕЛЕНЫЙ</p></li>
+                    <li><p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- </span> КРАСНЫЙ</p></li>
+                    <li><p><span>&nbsp;</span>&nbsp;</p></li>
                 </ul>
                 <div class="button"><img src="img/shopping_cart.png" /> заказать</div>
             </li>
@@ -481,6 +470,24 @@
             <li></li>
             <li></li>
             <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
         </ul>
 
     </div>
@@ -534,7 +541,7 @@
             <ul>
                 <li>
                     <h2>Доставка по г. Москва</h2>
-                    <p>Курьерская доставка на дом (1-2 дня). Самовывоз: ул. Москворечье, 2ж, офис 208 (метро «Каширское» и «Варшавская») с 10:00 до 21:00.</p>
+                    <p>Курьерская доставка на дом (1-2 дня). Самовывоз: метро Чертановская, Балаклавский проспект д.28Б выдача интернет-заказов с 10:00 до 21:00.</p>
                 </li>
                 <li>
                     <h2>Доставка по г. Санкт-Петербург</h2>

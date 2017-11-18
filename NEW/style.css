@@ -191,7 +191,6 @@ header {
         text-transform: uppercase;
         margin-bottom: 10px;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
     }
 
     .text-container p {
@@ -201,11 +200,10 @@ header {
         line-height: 20px;
         margin-bottom: 20px;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-
     }
 
 .magic-track {
-    width: 1360px;
+    width: 100%;
     height: 275px;
     background: rgb(225, 225, 225);
     display: flex;
@@ -271,7 +269,7 @@ header {
     }
 
 .video {
-    width: 1360px;
+    width: 100%;
     height: 700px;
     background: rgb(66, 103, 120);
     display: flex;
@@ -338,7 +336,7 @@ header {
             }
 
             .choose-track .items .item .item-photo {
-				height: 25%;
+                height: 25%;
                 margin-bottom: 40px;
             }
 
@@ -384,6 +382,15 @@ header {
                         top: 20px;
                     }
 
+                    .choose-track .items .item .price h1.one-setcar:after {
+                        content: "одна машинка";
+                        color: white;
+                        font-family: MagicFontLight;
+                        font-size: 13px;
+                        text-transform: lowercase;
+                        position: absolute;
+                        top: 20px;
+                    }
 
                     .choose-track .items .item .price h1.two-sets:after {
                         content: "два набора";
@@ -547,10 +554,10 @@ header {
         flex-direction: row;
     }
 
-    #carousel li:first-child {
-        visibility: visible;
-        opacity: 1;
-    }
+        #carousel li:first-child {
+            visibility: visible;
+            opacity: 1;
+        }
 
     #carousel .person {
         width: 200px;
@@ -569,25 +576,25 @@ header {
             height: 120px;
             border-radius: 50%;
             background: url(img/photo.jpg);
-			background-size: 100%;
+            background-size: 100%;
             margin-bottom: 15px;
         }
-		
-		#carousel .person .photo1 {
+
+        #carousel .person .photo1 {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             background: url(img/photo1.jpg);
-			background-size: 100%;
+            background-size: 100%;
             margin-bottom: 15px;
         }
-		
-		#carousel .person .photo2 {
+
+        #carousel .person .photo2 {
             width: 120px;
             height: 120px;
             border-radius: 50%;
             background: url(img/photo2.jpg);
-			background-size: 100%;
+            background-size: 100%;
             margin-bottom: 15px;
         }
 
@@ -634,7 +641,7 @@ header {
 }
 
 .order {
-    width: 1360px;
+    width: 100%;
     height: 750px;
     background: rgb(140, 163, 173);
     display: flex;
@@ -848,7 +855,7 @@ header {
 
 .magic-photos {
     width: 1440px;
-    height: 440px;
+    height: 880px;
     /*border: 1px solid red;*/
     display: flex;
     flex-direction: column;
@@ -942,27 +949,26 @@ header .slides {
     box-sizing: border-box;
     background: #333;
     color: #fff;
-    
 }
 
     .slide:nth-of-type(1) {
         background: url(img/1.jpg);
-		background-repeat:no-repeat;
+        background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;    
+        background-size: cover;
     }
 
     .slide:nth-of-type(2) {
         background: url(img/2.jpg);
-		background-repeat:no-repeat;
+        background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
     }
 
     .slide:nth-of-type(3) {
         background: url(img/3.jpg);
-		background-repeat:no-repeat;
-		background-position: center;
+        background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
     }
 
@@ -976,36 +982,7 @@ header .slides {
     }
 }
 
-#gallery {
-    width: 1200px;
-    height: 650px;
-    /*border: 1px solid blue;*/
-}
 
-    #gallery > li {
-        position: relative;
-        float: left;
-        z-index: 9999;
-        width: 185px;
-        height: 115px;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: rgb(245,245,245);
-        margin: 7.5px;
-        cursor: pointer;
-    }
-
-        #gallery > li > img {
-            position: absolute;
-            width: 190px;
-            height: 85px;
-            transition: .1s transform;
-        }
-
-    #gallery li:hover {
-        transform: scale(1.1);
-    }
 
 .fifth {
     margin: 0 18px 0 18px;
@@ -1074,9 +1051,9 @@ footer {
     position: relative;
 }
 
-footer .text-container {
-    top: 120px;
-}
+    footer .text-container {
+        top: 120px;
+    }
 
 .line {
     height: 50px;
@@ -1456,10 +1433,41 @@ input::placeholder, textarea::placeholder {
         text-transform: uppercase;
     }
 
-@media screen and (max-width: 900px) {
-    body header {
-        height: 300px;
+#gallery {
+    width: 1200px;
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
+    /*border: 1px solid blue;*/
+}
+
+    #gallery > li {
+        position: relative;
+        float: left;
+        z-index: 9999;
+        width: 185px;
+        height: 115px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: rgb(245,245,245);
+        margin: 7.5px;
+        cursor: pointer;
     }
+
+        #gallery > li > img {
+            position: absolute;
+            width: 190px;
+            height: 85px;
+            transition: .1s transform;
+        }
+
+    #gallery li:hover {
+        transform: scale(1.1);
+    }
+
+@media screen and (max-width: 900px) {
+
 
     header .container {
         /*flex-direction: column;*/
@@ -1468,6 +1476,7 @@ input::placeholder, textarea::placeholder {
         position: relative;
         justify-content: center;
         padding: 0;
+        z-index: 1;
     }
 
         header .container h1 {
@@ -1476,8 +1485,15 @@ input::placeholder, textarea::placeholder {
             font-size: 20px;
         }
 
-    header .slides {
-        display: none;
+    .slides {
+        /*display: none;*/
+        height: 200px;
+        width: 100%;
+    }
+
+    .slide:nth-of-type(1) {
+        background-size: cover;
+        background-position: center;
     }
 
     header {
@@ -1568,7 +1584,9 @@ input::placeholder, textarea::placeholder {
         }
 
         .horizontal-container #gallery {
-            display: none;
+            /*display: none;*/
+            height: 500px;
+            width: 100%;
         }
 
     .reviews {
@@ -1646,8 +1664,22 @@ input::placeholder, textarea::placeholder {
 
 
     .magic-photos {
-        display: none;
+        /*display: none;*/
+        width: 100%;
+        height: 1000px;
+        display: flex;
     }
+
+        .magic-photos h1 {
+            text-align: center;
+        }
+
+        .magic-photos p {
+            width: 98%;
+            text-align: center;
+        }
+
+
 
     footer {
         display: none;
@@ -1749,5 +1781,21 @@ input::placeholder, textarea::placeholder {
 
     div.text-container {
         display: none;
+    }
+
+    .magic-photos {
+        width: 100%;
+        height: 2150px;
+    }
+
+    #gallery {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;    
+        justify-content: center;
+    }
+
+    #gallery li {
+        width: 150px;
     }
 }
