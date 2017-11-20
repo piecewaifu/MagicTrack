@@ -311,6 +311,10 @@ function updateAmount() {
     var price = parseInt(priceString.replace(" ", ""))
 
     var amount = (quantity * price / 1000).toFixed(3).replace(".", " ");
+    amount = (quantity * price / 1000).toFixed(3).replace(/$0 /, "");
+    if(price < 1000) {
+        amount = (quantity * price / 1000).toFixed(3).replace("0.", "");
+    }
     document.getElementById("amount").innerHTML = amount;
 }
 
