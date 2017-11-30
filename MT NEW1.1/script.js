@@ -16,7 +16,7 @@ window.onload = function () {
     $("#customerPhone").mask("+7(999) 999-9999");
     $("#customerPhone2").mask("+7(999) 999-9999");
 
-    initialize();
+    //initialize();
 
     attachClickHandler("show-callback-form", showCallbackForm);
     attachClickHandler("close-callback-form", hideCallbackForm);
@@ -367,7 +367,7 @@ function initEmailJs() {
         return;
     }
 
-    emailjs.init("user_1SpINizilajHMYgt4Mzl6");
+    emailjs.init("user_iakJ2v641nwvWKDvnvYpw");
 }
 
 function sendCallback() {
