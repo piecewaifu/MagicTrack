@@ -208,9 +208,13 @@ function sendOrder() {
     });
 
 
+    yaCounter46447977.reachGoal('buy'); 
+
     showAlert();
     setTimeout(hideAlert, 7000);
     hideOrderForm();
+
+    return true;
 }
 
 function sendOrderFooter() {
@@ -241,9 +245,14 @@ function sendOrderFooter() {
         "amount": amount
     });
 
+
+    yaCounter46447977.reachGoal('buy');
+
     showAlert();
     setTimeout(hideAlert, 7000);
     hideOrder();
+
+    return true;
 }
 
 function showOrder() {
@@ -390,9 +399,12 @@ function sendCallback() {
     var result = emailjs.send("gmail", "callback", { "name": callbackForm.getElementsByTagName("input")[0].value, "phone": callbackForm.getElementsByTagName("input")[1].value });
     console.log("Email send result = " + result);
 
+
+    yaCounter46447977.reachGoal('zakaz_zvonka'); 
     showAlert();
     setTimeout(hideAlert, 5000);
     hide('callback');
+    return true;
 }
 
 function startVideoLoading() {
